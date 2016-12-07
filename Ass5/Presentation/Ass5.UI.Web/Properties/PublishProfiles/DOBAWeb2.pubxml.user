@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\www\DOBAWebAssignment</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/ACE.dll">
+      <publishTime>04/14/2015 14:44:08</publishTime>
+    </File>
+    <File Include="bin/Ass5.Entities.dll">
+      <publishTime>07/12/2016 14:46:39</publishTime>
+    </File>
+    <File Include="bin/Ass5.UI.Process.dll">
+      <publishTime>07/12/2016 16:04:36</publishTime>
+    </File>
+    <File Include="bin/Ass5.UI.Web.dll">
+      <publishTime>07/12/2016 16:04:39</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>01/29/2015 09:57:28</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.Net4.dll">
+      <publishTime>01/29/2015 09:57:28</publishTime>
+    </File>
+    <File Include="bin/EasyNetQ.DI.Ninject.dll">
+      <publishTime>04/01/2015 16:44:06</publishTime>
+    </File>
+    <File Include="bin/EasyNetQ.dll">
+      <publishTime>04/01/2015 16:44:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>11/30/2016 10:50:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>11/30/2016 10:50:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.DTSPipelineWrap.dll">
+      <publishTime>04/03/2010 11:53:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.DTSRuntimeWrap.dll">
+      <publishTime>04/03/2010 11:53:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.FileSystemTask.dll">
+      <publishTime>04/03/2010 11:53:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.ManagedDTS.dll">
+      <publishTime>04/03/2010 11:53:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.PipelineHost.dll">
+      <publishTime>04/03/2010 11:53:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.SendMailTask.dll">
+      <publishTime>04/03/2010 11:53:02</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.ACE.dll">
+      <publishTime>04/29/2016 17:03:30</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.ACE.Entities.dll">
+      <publishTime>04/29/2016 17:03:30</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.AE.dll">
+      <publishTime>11/13/2014 09:10:54</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.DXE.dll">
+      <publishTime>03/25/2015 17:46:40</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.DXE.Entities.dll">
+      <publishTime>03/25/2015 17:46:40</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.RCE.dll">
+      <publishTime>04/29/2016 13:44:40</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/07/2014 10:39:38</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>04/02/2014 18:40:18</publishTime>
+    </File>
+    <File Include="bin/RabbitMQ.Client.dll">
+      <publishTime>01/14/2015 07:17:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/30/2016 10:52:30</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>11/30/2016 12:09:44</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/06/2016 11:29:30</publishTime>
+    </File>
+    <File Include="Scripts/ACE 4.1.sql">
+      <publishTime>11/30/2016 12:10:33</publishTime>
+    </File>
+    <File Include="Scripts/AE 2.0.sql">
+      <publishTime>12/06/2016 11:29:30</publishTime>
+    </File>
+    <File Include="Scripts/RCE 1.0.sql">
+      <publishTime>11/30/2016 12:10:31</publishTime>
+    </File>
+    <File Include="StatusTimeEntry.aspx">
+      <publishTime>11/30/2016 13:21:34</publishTime>
+    </File>
+    <File Include="TimeEntry.aspx">
+      <publishTime>12/06/2016 16:06:40</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>12/07/2016 16:07:00</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

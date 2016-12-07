@@ -1,0 +1,5 @@
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Entities.dll
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Entities.pdb
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Shared\Ass5.Entities\obj\Release\Ass5.Entities.csprojResolveAssemblyReference.cache
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Shared\Ass5.Entities\obj\Release\Ass5.Entities.dll
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Shared\Ass5.Entities\obj\Release\Ass5.Entities.pdb

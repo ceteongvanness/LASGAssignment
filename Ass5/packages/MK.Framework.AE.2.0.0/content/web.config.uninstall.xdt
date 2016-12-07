@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <configSections>
+    <sectionGroup name="macrokiosk">
+      <section name="auditControl" xdt:Locator="Match(name)" xdt:Transform="Remove" />
+    </sectionGroup>
+    <sectionGroup name="macrokiosk" xdt:Transform="Remove" xdt:Locator="Condition(count(*)=0)" />
+    
+  </configSections>
+  <configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+  
+  <macrokiosk>
+    <auditControl xdt:Transform="Remove" />
+  </macrokiosk>
+  <macrokiosk xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+  
+</configuration>

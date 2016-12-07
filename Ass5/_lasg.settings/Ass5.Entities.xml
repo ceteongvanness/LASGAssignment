@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClassModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClassModel ClassName="Task" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Represents a row of Task data." ProductName="Ass5.Entities" Parent="" OverrideToStringMethod="false" HasSerializableAttribute="false" NotifyPropertyChange="false" ToStringDelimiter="44">
+    <NamespacesToImport>
+      <string>System</string>
+      <string>System.Collections.Generic</string>
+      <string>System.Collections.ObjectModel</string>
+      <string>System.ComponentModel</string>
+      <string>System.Linq</string>
+      <string>System.Runtime.Serialization</string>
+    </NamespacesToImport>
+    <Columns>
+      <ColumnModel IsUpdated="false" Name="TaskID" PropertyName="TaskID" DisplayName="Task ID" TableName="Task" Type="string" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="false" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="true" XmlComment="Gets or sets a string value for the TaskID column." />
+      <ColumnModel IsUpdated="false" Name="TaskName" PropertyName="TaskName" DisplayName="Task Name" TableName="Task" Type="string" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a string value for the TaskName column." />
+      <ColumnModel IsUpdated="false" Name="StartDate" PropertyName="StartDate" DisplayName="Start Date" TableName="Task" Type="DateTime" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a DateTime value for the StartDate column." />
+      <ColumnModel IsUpdated="false" Name="EndDate" PropertyName="EndDate" DisplayName="End Date" TableName="Task" Type="DateTime" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a DateTime value for the EndDate column." />
+      <ColumnModel IsUpdated="false" Name="CorrelationID" PropertyName="CorrelationID" DisplayName="Correlation ID" TableName="Task" Type="Guid" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a Guid value for the CorrelationID column." />
+      <ColumnModel IsUpdated="false" Name="DateSubmitted" PropertyName="DateSubmitted" DisplayName="Date Submitted" TableName="Task" Type="DateTime" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a DateTime value for the DateSubmitted column." />
+      <ColumnModel IsUpdated="false" Name="TaskStatus" PropertyName="TaskStatus" DisplayName="Task Status" TableName="Task" Type="string" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a string value for the TaskStatus column." />
+      <ColumnModel IsUpdated="false" Name="TaskNo" PropertyName="TaskNo" DisplayName="Task No" TableName="Task" Type="string" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a string value for the TaskNo column." />
+    </Columns>
+  </ClassModel>
+  <ClassModel ClassName="TaskLog" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Represents a row of TaskLog data." ProductName="Ass5.Entities" Parent="" OverrideToStringMethod="false" HasSerializableAttribute="false" NotifyPropertyChange="false" ToStringDelimiter="44">
+    <NamespacesToImport>
+      <string>System</string>
+      <string>System.Collections.Generic</string>
+      <string>System.Collections.ObjectModel</string>
+      <string>System.ComponentModel</string>
+      <string>System.Linq</string>
+      <string>System.Runtime.Serialization</string>
+    </NamespacesToImport>
+    <Columns>
+      <ColumnModel IsUpdated="false" Name="TaskLogID" PropertyName="TaskLogID" DisplayName="Task Log ID" TableName="TaskLog" Type="string" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="false" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="true" XmlComment="Gets or sets a string value for the TaskLogID column." />
+      <ColumnModel IsUpdated="false" Name="TaskID" PropertyName="TaskID" DisplayName="Task ID" TableName="TaskLog" Type="string" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a string value for the TaskID column." />
+      <ColumnModel IsUpdated="false" Name="TaskName" PropertyName="TaskName" DisplayName="Task Name" TableName="TaskLog" Type="string" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a string value for the TaskName column." />
+      <ColumnModel IsUpdated="false" Name="StartDate" PropertyName="StartDate" DisplayName="Start Date" TableName="TaskLog" Type="DateTime" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a DateTime value for the StartDate column." />
+      <ColumnModel IsUpdated="false" Name="EndDate" PropertyName="EndDate" DisplayName="End Date" TableName="TaskLog" Type="DateTime" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a DateTime value for the EndDate column." />
+      <ColumnModel IsUpdated="false" Name="DateSubmitted" PropertyName="DateSubmitted" DisplayName="Date Submitted" TableName="TaskLog" Type="DateTime" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a DateTime value for the DateSubmitted column." />
+      <ColumnModel IsUpdated="false" Name="TaskStatus" PropertyName="TaskStatus" DisplayName="Task Status" TableName="TaskLog" Type="string" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a string value for the TaskStatus column." />
+      <ColumnModel IsUpdated="false" Name="TaskNo" PropertyName="TaskNo" DisplayName="Task No" TableName="TaskLog" Type="string" SetAsXmlAttribute="false" SetDisplayNameAttribute="false" IsBrowsable="true" MarkAsVirtual="false" IsNullable="false" IsList="false" IsObject="false" IsPrimaryKey="false" XmlComment="Gets or sets a string value for the TaskNo column." />
+    </Columns>
+  </ClassModel>
+</ArrayOfClassModel>

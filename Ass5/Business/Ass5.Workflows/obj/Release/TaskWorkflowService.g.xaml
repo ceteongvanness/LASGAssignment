@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<aw:TaskWorkflowService xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ae="clr-namespace:Ass5.Entities;assembly=Ass5.Entities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:aw="clr-namespace:Ass5.Workflows;assembly=Ass5.Workflows" xmlns:awa="clr-namespace:Ass5.Workflows.Activities;assembly=Ass5.Workflows.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ssx="clr-namespace:System.ServiceModel.XamlIntegration;assembly=System.ServiceModel" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>Ass5.Entities</AssemblyReference>
+      <AssemblyReference>Ass5.Business</AssemblyReference>
+      <AssemblyReference>Ass5.Workflows.Activities</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Ass5.Workflows</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <aw:TaskWorkflowService.Implementation>
+    <Flowchart>
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="p:CorrelationHandle" x:Name="__ReferenceID0" Name="_handle" />
+        <Variable x:TypeArguments="ae:Task" x:Name="__ReferenceID2" Name="_applyResult" />
+        <Variable x:TypeArguments="ae:Task" x:Name="__ReferenceID1" Name="_task" />
+        <Variable x:TypeArguments="ae:TaskLog" Name="_taskLog" />
+      </Flowchart.Variables>
+      <Flowchart.StartNode>
+        <FlowStep x:Name="__ReferenceID7">
+          <Sequence DisplayName="Apply">
+            <p:Receive x:Name="__ReferenceID3" Action="http://tempuri.org/ITaskWorkflowService/Apply" CanCreateInstance="True" DisplayName="Apply Receive" OperationName="Apply" ProtectionLevel="None" ServiceContractName="ITaskWorkflowService">
+              <p:Receive.CorrelatesOn>
+                <p:XPathMessageQuery x:Key="key1">
+                  <p:XPathMessageQuery.Namespaces>
+                    <ssx:XPathMessageContextMarkup>
+                      <x:String x:Key="xg0">http://schemas.datacontract.org/2004/07/Ass5.Entities</x:String>
+                      <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                    </ssx:XPathMessageContextMarkup>
+                  </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:Apply/xgSc:task/xg0:CorrelationID</p:XPathMessageQuery>
+              </p:Receive.CorrelatesOn>
+              <p:Receive.CorrelatesWith>
+                <InArgument x:TypeArguments="p:CorrelationHandle">
+                  <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">_handle</mca:CSharpValue>
+                </InArgument>
+              </p:Receive.CorrelatesWith>
+              <p:Receive.CorrelationInitializers>
+                <p:RequestReplyCorrelationInitializer>
+                  <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                    <InArgument x:TypeArguments="p:CorrelationHandle">
+                      <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID0}" />
+                    </InArgument>
+                  </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                </p:RequestReplyCorrelationInitializer>
+              </p:Receive.CorrelationInitializers>
+              <p:ReceiveParametersContent>
+                <OutArgument x:TypeArguments="ae:Task" x:Key="task">
+                  <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                </OutArgument>
+              </p:ReceiveParametersContent>
+            </p:Receive>
+            <awa:Apply DisplayName="Apply">
+              <awa:Apply.ApplyResult>
+                <OutArgument x:TypeArguments="ae:Task">
+                  <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID2}" />
+                </OutArgument>
+              </awa:Apply.ApplyResult>
+              <awa:Apply.Task>
+                <InArgument x:TypeArguments="ae:Task">
+                  <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                </InArgument>
+              </awa:Apply.Task>
+            </awa:Apply>
+            <p:SendReply Request="{x:Reference __ReferenceID3}" Action="http://tempuri.org/ITaskWorkflowService/ApplyResponse" DisplayName="Apply Reply" PersistBeforeSend="True">
+              <p:SendParametersContent>
+                <InArgument x:TypeArguments="ae:Task" x:Key="ApplyResponseResult">
+                  <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID2}" />
+                </InArgument>
+              </p:SendParametersContent>
+            </p:SendReply>
+          </Sequence>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID8">
+              <Pick>
+                <PickBranch>
+                  <PickBranch.Trigger>
+                    <Sequence DisplayName="Approve">
+                      <p:Receive x:Name="__ReferenceID4" Action="http://tempuri.org/ITaskWorkflowService/Approve" DisplayName="Approve Receive" OperationName="Approve" ProtectionLevel="None" ServiceContractName="ITaskWorkflowService">
+                        <p:Receive.CorrelatesOn>
+                          <p:XPathMessageQuery x:Key="key1">
+                            <p:XPathMessageQuery.Namespaces>
+                              <ssx:XPathMessageContextMarkup>
+                                <x:String x:Key="xg0">http://schemas.datacontract.org/2004/07/Ass5.Entities</x:String>
+                                <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                              </ssx:XPathMessageContextMarkup>
+                            </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:Approve/xgSc:task/xg0:CorrelationID</p:XPathMessageQuery>
+                        </p:Receive.CorrelatesOn>
+                        <p:Receive.CorrelatesWith>
+                          <InArgument x:TypeArguments="p:CorrelationHandle">
+                            <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">_handle</mca:CSharpValue>
+                          </InArgument>
+                        </p:Receive.CorrelatesWith>
+                        <p:Receive.CorrelationInitializers>
+                          <p:RequestReplyCorrelationInitializer>
+                            <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                              <InArgument x:TypeArguments="p:CorrelationHandle">
+                                <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID0}" />
+                              </InArgument>
+                            </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                          </p:RequestReplyCorrelationInitializer>
+                        </p:Receive.CorrelationInitializers>
+                        <p:ReceiveParametersContent>
+                          <OutArgument x:TypeArguments="ae:Task" x:Key="task">
+                            <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                          </OutArgument>
+                        </p:ReceiveParametersContent>
+                      </p:Receive>
+                      <awa:Approve DisplayName="Approve">
+                        <awa:Approve.Task>
+                          <InArgument x:TypeArguments="ae:Task">
+                            <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                          </InArgument>
+                        </awa:Approve.Task>
+                      </awa:Approve>
+                      <p:SendReply Request="{x:Reference __ReferenceID4}" Action="http://tempuri.org/ITaskWorkflowService/ApproveResponse" DisplayName="Approve Reply" PersistBeforeSend="True" />
+                    </Sequence>
+                  </PickBranch.Trigger>
+                </PickBranch>
+                <PickBranch DisplayName="Branch2">
+                  <PickBranch.Trigger>
+                    <Sequence DisplayName="Reject">
+                      <p:Receive x:Name="__ReferenceID5" Action="http://tempuri.org/ITaskWorkflowService/Reject" DisplayName="Reject Receive" OperationName="Reject" ProtectionLevel="None" ServiceContractName="ITaskWorkflowService">
+                        <p:Receive.CorrelatesOn>
+                          <p:XPathMessageQuery x:Key="key1">
+                            <p:XPathMessageQuery.Namespaces>
+                              <ssx:XPathMessageContextMarkup>
+                                <x:String x:Key="xg0">http://schemas.datacontract.org/2004/07/Ass5.Entities</x:String>
+                                <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                              </ssx:XPathMessageContextMarkup>
+                            </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:Reject/xgSc:task/xg0:CorrelationID</p:XPathMessageQuery>
+                        </p:Receive.CorrelatesOn>
+                        <p:Receive.CorrelatesWith>
+                          <InArgument x:TypeArguments="p:CorrelationHandle">
+                            <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">_handle</mca:CSharpValue>
+                          </InArgument>
+                        </p:Receive.CorrelatesWith>
+                        <p:Receive.CorrelationInitializers>
+                          <p:RequestReplyCorrelationInitializer>
+                            <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                              <InArgument x:TypeArguments="p:CorrelationHandle">
+                                <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID0}" />
+                              </InArgument>
+                            </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                          </p:RequestReplyCorrelationInitializer>
+                        </p:Receive.CorrelationInitializers>
+                        <p:ReceiveParametersContent>
+                          <OutArgument x:TypeArguments="ae:Task" x:Key="task">
+                            <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                          </OutArgument>
+                        </p:ReceiveParametersContent>
+                      </p:Receive>
+                      <awa:Reject DisplayName="Reject">
+                        <awa:Reject.Task>
+                          <InArgument x:TypeArguments="ae:Task">
+                            <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                          </InArgument>
+                        </awa:Reject.Task>
+                      </awa:Reject>
+                      <p:SendReply Request="{x:Reference __ReferenceID5}" Action="http://tempuri.org/ITaskWorkflowService/RejectResponse" DisplayName="Reject Reply" PersistBeforeSend="True" />
+                    </Sequence>
+                  </PickBranch.Trigger>
+                </PickBranch>
+                <PickBranch>
+                  <PickBranch.Trigger>
+                    <Sequence DisplayName="Cancel">
+                      <p:Receive x:Name="__ReferenceID6" Action="http://tempuri.org/ITaskWorkflowService/Cancel" DisplayName="Cancel Receive" OperationName="Cancel" ProtectionLevel="None" ServiceContractName="ITaskWorkflowService">
+                        <p:Receive.CorrelatesOn>
+                          <p:XPathMessageQuery x:Key="key1">
+                            <p:XPathMessageQuery.Namespaces>
+                              <ssx:XPathMessageContextMarkup>
+                                <x:String x:Key="xg0">http://schemas.datacontract.org/2004/07/Ass5.Entities</x:String>
+                                <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                              </ssx:XPathMessageContextMarkup>
+                            </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:Cancel/xgSc:task/xg0:CorrelationID</p:XPathMessageQuery>
+                        </p:Receive.CorrelatesOn>
+                        <p:Receive.CorrelatesWith>
+                          <InArgument x:TypeArguments="p:CorrelationHandle">
+                            <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">_handle</mca:CSharpValue>
+                          </InArgument>
+                        </p:Receive.CorrelatesWith>
+                        <p:Receive.CorrelationInitializers>
+                          <p:RequestReplyCorrelationInitializer>
+                            <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                              <InArgument x:TypeArguments="p:CorrelationHandle">
+                                <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID0}" />
+                              </InArgument>
+                            </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                          </p:RequestReplyCorrelationInitializer>
+                        </p:Receive.CorrelationInitializers>
+                        <p:ReceiveParametersContent>
+                          <OutArgument x:TypeArguments="ae:Task" x:Key="task">
+                            <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                          </OutArgument>
+                        </p:ReceiveParametersContent>
+                      </p:Receive>
+                      <awa:Cancel DisplayName="Cancel">
+                        <awa:Cancel.Task>
+                          <InArgument x:TypeArguments="ae:Task">
+                            <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                          </InArgument>
+                        </awa:Cancel.Task>
+                      </awa:Cancel>
+                      <p:SendReply Request="{x:Reference __ReferenceID6}" Action="http://tempuri.org/ITaskWorkflowService/CancelResponse" DisplayName="Cancel Reply" PersistBeforeSend="True" />
+                    </Sequence>
+                  </PickBranch.Trigger>
+                </PickBranch>
+                <PickBranch>
+                  <PickBranch.Trigger>
+                    <Delay>
+                      <InArgument x:TypeArguments="x:TimeSpan">
+                        <mca:CSharpValue x:TypeArguments="x:TimeSpan">new TimeSpan(0,2,0)</mca:CSharpValue>
+                      </InArgument>
+                    </Delay>
+                  </PickBranch.Trigger>
+                  <Sequence DisplayName="Update">
+                    <awa:Update DisplayName="Update">
+                      <awa:Update.Task>
+                        <InArgument x:TypeArguments="ae:Task">
+                          <mca:CSharpValue x:TypeArguments="ae:Task">_applyResult</mca:CSharpValue>
+                        </InArgument>
+                      </awa:Update.Task>
+                      <awa:Update.TaskLog>
+                        <InArgument x:TypeArguments="ae:TaskLog">
+                          <mca:CSharpValue x:TypeArguments="ae:TaskLog">null</mca:CSharpValue>
+                        </InArgument>
+                      </awa:Update.TaskLog>
+                    </awa:Update>
+                  </Sequence>
+                </PickBranch>
+              </Pick>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </Flowchart.StartNode>
+      <x:Reference>__ReferenceID7</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
+      <sads:DebugSymbol.Symbol>9xDWAQHHHODin9J/3MKvqyV5bUM6XFVzZXJzXGV0LmNoZWFoXGRvY3VtZW50c1x2aXN1YWwgc3R1ZGlvIDIwMTVcUHJvamVjdHNcQXNzNVxCdXNpbmVzc1xBc3M1LldvcmtmbG93c1xUYXNrV29ya2Zsb3dTZXJ2aWNlLnhhbWwuLQOPAg8CAQE2CWgUAgFDaw2HAhQCAQI3C1QXAgFLVQtgFwIBSGELZxkCAURsD5cBHAIBNJgBD8MBHAIBJcQBD+8BHAIBFvABD4YCHAIBA0MRQ2ECAU5REVFoAgFNShVKdAIBTFgRWGgCAUpdEV1kAgFJZBFkZAIBRW4TlQEeAgE1mgETwQEeAgEmxgET7QEeAgEX8gET9gEbAgEQ+AERhQIcAgEEbxWMASECATuNARWTASMCATmUARWUAe8BAgE2mwEVuAEhAgEsuQEVvwEiAgEqwAEVwAHtAQIBJ8cBFeQBIQIBHeUBFesBIgIBG+wBFewB7QECARj0ARf0AWoCARH5AROEAiACAQV7G3trAgE+iQEbiQFyAgE9ggEfggF+AgE8kAEbkAFuAgE6pwEbpwFrAgEvtQEbtQFyAgEurgEfrgF+AgEtvAEbvAFuAgEr0wEb0wFrAgEg4QEb4QFyAgEf2gEf2gF+AgEe6AEb6AFuAgEc/AEZ/AFiAgELgQIZgQJdAgEG</sads:DebugSymbol.Symbol>
+    </Flowchart>
+  </aw:TaskWorkflowService.Implementation>
+</aw:TaskWorkflowService>

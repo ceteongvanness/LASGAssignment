@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TaskService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2311/TaskService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2311/TaskService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2311/TaskService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ass5.Entities" />
+      <xsd:import schemaLocation="http://localhost:2311/TaskService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MK.Framework.ACE.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITaskService_Export_InputMessage">
+    <wsdl:part name="parameters" element="tns:Export" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Export_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_GetTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_GetTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_GetUserPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPermission" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_GetUserPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_ListTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListTask" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_ListTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_LoginVerify_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginVerify" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_LoginVerify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginVerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Apply_InputMessage">
+    <wsdl:part name="parameters" element="tns:Apply" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Apply_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Approve_InputMessage">
+    <wsdl:part name="parameters" element="tns:Approve" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Approve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Cancel_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cancel" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Cancel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Delay_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delay" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Delay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Reject_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reject" />
+  </wsdl:message>
+  <wsdl:message name="ITaskService_Reject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITaskService">
+    <wsdl:operation name="Export">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/Export" message="tns:ITaskService_Export_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/ExportResponse" message="tns:ITaskService_Export_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/GetTask" message="tns:ITaskService_GetTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/GetTaskResponse" message="tns:ITaskService_GetTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/GetUserPermission" message="tns:ITaskService_GetUserPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/GetUserPermissionResponse" message="tns:ITaskService_GetUserPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/ListTask" message="tns:ITaskService_ListTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/ListTaskResponse" message="tns:ITaskService_ListTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginVerify">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/LoginVerify" message="tns:ITaskService_LoginVerify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/LoginVerifyResponse" message="tns:ITaskService_LoginVerify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/Update" message="tns:ITaskService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/UpdateResponse" message="tns:ITaskService_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Apply">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/Apply" message="tns:ITaskService_Apply_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/ApplyResponse" message="tns:ITaskService_Apply_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Approve">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/Approve" message="tns:ITaskService_Approve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/ApproveResponse" message="tns:ITaskService_Approve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/Cancel" message="tns:ITaskService_Cancel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/CancelResponse" message="tns:ITaskService_Cancel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delay">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/Delay" message="tns:ITaskService_Delay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/DelayResponse" message="tns:ITaskService_Delay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reject">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITaskService/Reject" message="tns:ITaskService_Reject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITaskService/RejectResponse" message="tns:ITaskService_Reject_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="basicHttpTaskService" type="tns:ITaskService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Export">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/Export" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/GetTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPermission">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/GetUserPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListTask">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/ListTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginVerify">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/LoginVerify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Apply">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/Apply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Approve">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/Approve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cancel">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/Cancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delay">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/Delay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reject">
+      <soap:operation soapAction="http://tempuri.org/ITaskService/Reject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaskService">
+    <wsdl:port name="basicHttpTaskService" binding="tns:basicHttpTaskService">
+      <soap:address location="http://localhost:2311/TaskService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,2 @@
+obj\Release\TaskWorkflowService.g.xaml
+obj\Release\Ass5.Workflows_TaskWorkflowService_BeforeInitializeComponentHelper.txt

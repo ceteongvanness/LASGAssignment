@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClassModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClassModel ClassName="TaskController" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Task controller component." ProductName="Ass5.UI.Process">
+    <NamespacesToImport>
+      <string>Ass5.Entities</string>
+      <string>Ass5.Services.Contracts</string>
+      <string>Ass5.UI.Process.TaskService</string>
+      <string>System</string>
+      <string>System.Collections.Generic</string>
+      <string>System.Collections.ObjectModel</string>
+      <string>System.ServiceModel</string>
+      <string>MK.Framework.ACE.Entities</string>
+      <string>Ass5.UI.Process.TaskWorkflowService</string>
+    </NamespacesToImport>
+    <Methods>
+      <MethodModel ServiceName="TaskService" Name="ListTask" OperationName="" FaultContractName="" ComponentName="ITaskService" Signature="ListTask(int currentPage)" ReturnSignature="List&lt;Task&gt;" CallSignature="ListTask(currentPage)" IsUpdated="false" XmlComment="Calls the ListTask operation method in the TaskService." />
+      <MethodModel ServiceName="TaskService" Name="GetTask" OperationName="" FaultContractName="" ComponentName="ITaskService" Signature="GetTask(string taskID)" ReturnSignature="Task" CallSignature="GetTask(taskID)" IsUpdated="false" XmlComment="Calls the GetTask operation method in the TaskService." />
+      <MethodModel ServiceName="TaskService" Name="LoginVerify" OperationName="" FaultContractName="" ComponentName="ITaskService" Signature="LoginVerify(string Username, string Password)" ReturnSignature="User" CallSignature="LoginVerify(username, password)" IsUpdated="false" XmlComment="Calls the LoginVerify operation method in the TaskService." />
+      <MethodModel ServiceName="TaskService" Name="GetUserPermission" OperationName="" FaultContractName="" ComponentName="ITaskService" Signature="GetUserPermission(long userID, string policyId)" ReturnSignature="AccessPolicy" CallSignature="GetUserPermission(userID, policyId)" IsUpdated="false" XmlComment="Calls the GetUserPermission operation method in the TaskService." />
+      <MethodModel ServiceName="TaskService" Name="Export" OperationName="" FaultContractName="" ComponentName="ITaskService" Signature="Export()" ReturnSignature="void" CallSignature="Export()" IsUpdated="false" XmlComment="Calls the Export operation method in the TaskService." />
+      <MethodModel ServiceName="TaskWorkflowService" Name="Cancel" OperationName="" FaultContractName="" ComponentName="TaskWorkflowService" Signature="Cancel(Task task)" ReturnSignature="void" CallSignature="Cancel(task)" IsUpdated="false" XmlComment="Calls the Cancel operation method in the TaskWorkflowService." />
+      <MethodModel ServiceName="TaskWorkflowService" Name="Reject" OperationName="" FaultContractName="" ComponentName="TaskWorkflowService" Signature="Reject(Task task)" ReturnSignature="void" CallSignature="Reject(task)" IsUpdated="false" XmlComment="Calls the Reject operation method in the TaskWorkflowService." />
+      <MethodModel ServiceName="TaskWorkflowService" Name="Approve" OperationName="" FaultContractName="" ComponentName="TaskWorkflowService" Signature="Approve(Task task)" ReturnSignature="void" CallSignature="Approve(task)" IsUpdated="false" XmlComment="Calls the Approve operation method in the TaskWorkflowService." />
+      <MethodModel ServiceName="TaskWorkflowService" Name="Apply" OperationName="" FaultContractName="" ComponentName="TaskWorkflowService" Signature="Apply(Task task)" ReturnSignature="void" CallSignature="Apply(task)" IsUpdated="false" XmlComment="Calls the Apply operation method in the TaskWorkflowService." />
+      <MethodModel ServiceName="TaskWorkflowService" Name="Update" OperationName="" FaultContractName="" ComponentName="TaskWorkflowService" Signature="Update(Task task, TaskLog taskLog)" ReturnSignature="void" CallSignature="Update(task, taskLog)" IsUpdated="false" XmlComment="Calls the Update operation method in the TaskWorkflowService." />
+    </Methods>
+    <IsWorkflowService>true</IsWorkflowService>
+  </ClassModel>
+</ArrayOfClassModel>

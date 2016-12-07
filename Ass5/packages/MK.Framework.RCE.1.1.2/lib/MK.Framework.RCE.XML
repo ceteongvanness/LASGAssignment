@@ -1,0 +1,915 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MK.Framework.RCE</name>
+    </assembly>
+    <members>
+        <member name="T:MK.Framework.RCE.CacheBase`1">
+            <summary>
+            A base class that provides implementation for data caching.
+            </summary>
+            <typeparam name="T">The type of object to cache.</typeparam>
+        </member>
+        <member name="F:MK.Framework.RCE.CacheBase`1._thisLock">
+            <summary>
+            An object that acts an mutual-exclusion lock.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.CacheBase`1._cache">
+            <summary>
+            An in-memory cache object type.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.CacheBase`1._monitor">
+            <summary>
+            A base object for a derived custom type that monitors changes in
+                the state of the data which a cache item depends on.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.CacheBase`1.#cctor">
+            <summary>
+            Static constructor for CacheBase.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.CacheBase`1.Get">
+            <summary>
+            Gets the cache object.
+            </summary>
+            <returns>A cached object.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.CacheBase`1.Clear">
+            <summary>
+            Removes the cache object.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.CacheBase`1.SetToCache">
+            <summary>
+            Set the Cache Item into cache.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.CacheBase`1.CreateCacheItem(System.Runtime.Caching.CacheItemPolicy@)">
+            <summary>
+            Creates the cache item and gets the cache item policy.
+            </summary>
+            <param name="policy">A set of eviction and expiration details for the specific cache
+                item.</param>
+            <returns>A cache item in the cache.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.CacheBase`1.CacheUpdateCallback(System.Runtime.Caching.CacheEntryUpdateArguments)">
+            <summary>
+            A delegate that is called before a cache entry is removed from the cache.
+            </summary>
+            <param name="args">Information about a cache entry that will be removed from the cache.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.CacheBase`1.GetContent">
+            <summary>
+            Gets the content of the cache item.
+            </summary>
+            <returns>The content of the cache item.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.CacheBase`1.GetMonitor">
+            <summary>
+            Get the object for a derived custom type that monitors changes in
+                the state of the data which a cache item depends on.
+            </summary>
+            <returns>An object that monitors changes in the state of the data which a cache item depends on.</returns>
+        </member>
+        <member name="P:MK.Framework.RCE.CacheBase`1.Key">
+            <summary>
+            Gets the name of the cache item.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.CacheBase`1.RefreshInterval">
+            <summary>
+            Gets or sets the refresh interval for the cache.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.CacheBase`1.TrackDataChanges">
+            <summary>
+            Gets or sets a value indicating whether to track data changes.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.RCE.Common.ColumnMatchType">
+            <summary>
+            Indicates which column match type to be used for matching criteria
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Common.ColumnMatchType.MatchExact">
+            <summary>
+            Match the data columns and headers count
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Common.ColumnMatchType.MatchHeader">
+            <summary>
+            Match the header count
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Common.ColumnMatchType.MatchData">
+            <summary>
+            Match the data column count
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Common.ColumnMatchType.MatchAuto">
+            <summary>
+            Match either data column or headers count
+            </summary>
+        </member>
+        <member name="T:MK.Framework.RCE.Common.DataErrorEventArgs">
+            <summary>
+            Provides data for the Data Error event.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DataErrorEventArgs.Name">
+            <summary>
+            Gets or sets the Name of the column.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DataErrorEventArgs.Value">
+            <summary>
+            Gets or sets the Value of the column.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DataErrorEventArgs.Message">
+            <summary>
+            Gets  or sets the error message.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DataErrorEventArgs.Data">
+            <summary>
+            Gets or sets the Data.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DataErrorEventArgs.LineNumber">
+            <summary>
+            Gets or sets the line number.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DataErrorEventArgs.Filename">
+            <summary>
+            Gets or set the name of the file.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.RCE.Data.DataAccessComponent">
+            <summary>
+            A base class that provides implementation for Data Access Component.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.Data.DataAccessComponent.GetDataValue``1(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets data value from specified data reader with specified column name.
+            </summary>
+            <typeparam name="T">The type of object to get the data.</typeparam>
+            <param name="dr">The IDataReader object that contains the data.</param>
+            <param name="columnName">The specified column name.</param>
+            <returns>Data value of the specified column name from the IDataReader object.</returns>
+        </member>
+        <member name="T:MK.Framework.RCE.Data.ServiceBrokerQueueDAC">
+            <summary>
+            A ServiceBrokerQueue Data Access Component.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Data.ServiceBrokerQueueDAC._connectionString">
+            <summary>
+            A connection string value.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Data.ServiceBrokerQueueDAC._queueName">
+            <summary>
+            A queue name value.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.Data.ServiceBrokerQueueDAC.#ctor(System.String,System.String)">
+            <summary>
+            Initialize the ServiceBrokerQueue with specified connection string and queue name.
+            </summary>
+            <param name="connectionString">A connection string value.</param>
+            <param name="queueName">A queue name value.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Data.ServiceBrokerQueueDAC.ClearConversations(System.String)">
+            <summary>
+            Clears the conversation handlers from the queue.
+            </summary>
+            <param name="serviceName">A serviceName value.</param>
+        </member>
+        <member name="T:MK.Framework.RCE.DelimitedFileCache`1">
+            <summary>
+            A DelimitedFileCache that implements data caching for file with delimiters.
+            </summary>
+            <typeparam name="T">The type of object to cache.</typeparam>
+        </member>
+        <member name="M:MK.Framework.RCE.DelimitedFileCache`1.#ctor(System.String,System.String)">
+            <summary>
+            Initialize the DelimitedFileCache with specified key (name) and name of the file.
+            </summary>
+            <param name="key">A key value.</param>
+            <param name="filename">The name of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.DelimitedFileCache`1.GetContent">
+            <summary>
+            Loads data from the delimited file.
+            </summary>
+            <returns>The type specified by caller.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.DelimitedFileCache`1.reader_DataError(System.Object,MK.Framework.RCE.Common.DataErrorEventArgs)">
+            <summary>
+            An event handling that handles the action when a data error occurs. 
+            </summary>
+            <param name="sender">Object that raised the particular event.</param>
+            <param name="e">Data that related to the data error event.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.DelimitedFileCache`1.GetMonitor">
+            <summary>
+            Gets the object that monitors changes of the delimited file.
+            </summary>
+            <returns>Returns a HostFileChangeMonitor object.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.DelimitedFileCache`1.CacheUpdateCallback(System.Runtime.Caching.CacheEntryUpdateArguments)">
+            <summary>
+            A delegate that is called before a cache entry is removed from the cache.
+            </summary>
+            <param name="args">Information about a cache entry that will be removed from the cache.</param>
+        </member>
+        <member name="P:MK.Framework.RCE.DelimitedFileCache`1.Filename">
+            <summary>
+            Gets the name of the file.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.DelimitedFileCache`1.Delimiter">
+            <summary>
+            Gets or sets the delimiter used for the file.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.DelimitedFileCache`1.HasHeader">
+            <summary>
+            Gets or sets a value to indicates whether the file has header.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.DelimitedFileCache`1.Encoding">
+            <summary>
+            Gets or sets the character encoding used for the file.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.RCE.Common.DelimitedTextFileReader`1">
+            <summary>
+            A Delimited Text File Reader that supports reading for file with delimiter
+            </summary>
+            <typeparam name="T">The type of objects to enumerate.This type parameter is covariant. That is,
+                you can use either the type you specified or any type that is more derived.
+                For more information about covariance and contravariance, see Covariance
+                and Contravariance in Generics.</typeparam>
+        </member>
+        <member name="F:MK.Framework.RCE.Common.DelimitedTextFileReader`1._properties">
+            <summary>
+            A dictionary to contains the object properties information.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Common.DelimitedTextFileReader`1._reader">
+            <summary>
+            A StreamReader object.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,MK.Framework.RCE.Common.TextFileDelimiter)">
+            <summary>
+            Initialize the reader with specified file name and with specified TextFileDelimiter.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,MK.Framework.RCE.Common.TextFileDelimiter,System.Boolean)">
+            <summary>
+            Initialize the reader with specified file name, with specified TextFileDelimiter and hasHeaders option.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,MK.Framework.RCE.Common.TextFileDelimiter,System.Boolean,System.Text.Encoding)">
+            <summary>
+            Initialize the reader with specified file name, with specified TextFileDelimiter, hasHeaders option and character encoding.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,MK.Framework.RCE.Common.TextFileDelimiter,System.Boolean,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified file name, with specified TextFileDelimiter, hasHeaders option, character encoding and byte order mark detection
+                option.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,MK.Framework.RCE.Common.TextFileDelimiter,System.String[])">
+            <summary>
+            Initialize the reader with specified file name, with specified TextFileDelimiter and headers.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="headers">The collection of headers.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,MK.Framework.RCE.Common.TextFileDelimiter,System.String[],System.Text.Encoding)">
+            <summary>
+            Initialize the reader with specified file name, with specified TextFileDelimiter, headers and character encoding.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="headers">The collection of headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,MK.Framework.RCE.Common.TextFileDelimiter,System.String[],System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified file name, with specified TextFileDelimiter, headers, character encoding and byte order mark detection
+                option.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="headers">The collection of headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,System.Char)">
+            <summary>
+            Initialize the reader with specified file name and with specified delimiter.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,System.Char,System.Boolean)">
+            <summary>
+            Initialize the reader with specified file name, with specified delimiter and hasHeaders option.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,System.Char,System.Boolean,System.Text.Encoding)">
+            <summary>
+            Initialize the reader with specified file name, with specified delimiter, hasHeaders option and character encoding.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,System.Char,System.Boolean,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified file name, with specified delimiter, hasHeaders option, character encoding and byte order mark detection
+                option.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,System.Char,System.String[])">
+            <summary>
+            Initialize the reader with specified file name, with specified delimiter and headers.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="headers">The collection of headers.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,System.Char,System.String[],System.Text.Encoding)">
+            <summary>
+            Initialize the reader with specified file name, with specified delimiter, headers and character encoding.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="headers">The collection of headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.String,System.Char,System.String[],System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified file name, with specified delimiter, headers, character encoding and byte order mark detection
+                option.
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="headers">The collection of headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,MK.Framework.RCE.Common.TextFileDelimiter)">
+            <summary>
+            Initialize the reader with specified Stream and with specified TextFileDelimiter.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,MK.Framework.RCE.Common.TextFileDelimiter,System.Boolean)">
+            <summary>
+            Initialize the reader with specified Stream, with specified TextFileDelimiter and hasHeaders option.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,MK.Framework.RCE.Common.TextFileDelimiter,System.Boolean,System.Text.Encoding)">
+            <summary>
+            Initialize the reader with specified Stream, with specified TextFileDelimiter, hasHeaders option and character encoding.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,MK.Framework.RCE.Common.TextFileDelimiter,System.Boolean,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified Stream, with specified TextFileDelimiter, hasHeaders option, character encoding and byte order mark detection
+                option.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,MK.Framework.RCE.Common.TextFileDelimiter,System.String[])">
+            <summary>
+            Initialize the reader with specified Stream, with specified TextFileDelimiter and headers.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="headers">The collection of headers.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,MK.Framework.RCE.Common.TextFileDelimiter,System.String[],System.Text.Encoding)">
+            <summary>
+            Initialize the reader with specified Stream, with specified TextFileDelimiter, headers, and character encoding.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="headers">The collection of headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,MK.Framework.RCE.Common.TextFileDelimiter,System.String[],System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified Stream, with specified TextFileDelimiter, headers, character encoding and byte order mark detection
+                option.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">A TextFileDelimiter constant specifying the delimeter (for example, <c>Comma</c>) .</param>
+            <param name="headers">The collection of headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,System.Char)">
+            <summary>
+            Initialize the reader with specified Stream and with specified delimiter.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,System.Char,System.Boolean)">
+            <summary>
+            Initialize the reader with specified Stream, with specified delimiter and hasHeaders option.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,System.Char,System.Boolean,System.Text.Encoding)">
+            <summary>
+            Initialize the reader with specified Stream, with specified delimiter, hasHeaders option and character encoding.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,System.Char,System.Boolean,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified Stream, with specified delimiter, hasHeaders option, character encoding and byte order mark detection
+                option.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,System.Char,System.String[])">
+            <summary>
+            Initialize the reader with specified Stream, with specified delimiter and headers.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="headers">The collection of headers.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,System.Char,System.String[],System.Text.Encoding)">
+            <summary>
+            Initialize the reader with specified Stream, with specified delimiter, headers and character encoding.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="headers">The collection of headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.#ctor(System.IO.Stream,System.Char,System.String[],System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified Stream, with specified delimiter, headers, character encoding and byte order mark detection
+                option.
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="delimiter">The delimiter used for the file.</param>
+            <param name="headers">The collection of headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.InitializeWithStream(System.IO.Stream,System.Boolean,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified stream, hasReaders option, character encoding and byte order mark detection
+                option. 
+            </summary>
+            <param name="stream">The specified stream to be used.</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.InitializeWithFilename(System.String,System.Boolean,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initialize the reader with specified file name, hasReaders option, character encoding and byte order mark detection
+                option. 
+            </summary>
+            <param name="filename">The specified file name.</param>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+            <param name="encoding">The character encoding to be used.</param>
+            <param name="byteOrderMarks">Indicates whether to look for byte order marks at the beginning of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.Initialize(System.Boolean)">
+            <summary>
+            Initialize reader with hasReaders option.
+            </summary>
+            <param name="hasHeaders">Indicates whether file has headers.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.LoadProperties">
+            <summary>
+            Load the properties of the type T.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>An System.Collections.IEnumerator object that can be used to iterate through
+                the collection.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.System#Collections#Generic#IEnumerable{MK#Framework#RCE#Common#ReadResult{T}}#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a T collection.
+            </summary>
+            <returns>An System.Collections.IEnumerator object that can be used to iterate through
+                the T collection.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.RaiseDataError(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialize the call to the DataError event.
+            </summary>
+            <param name="name">Name of the column.</param>
+            <param name="value">Value of the column.</param>
+            <param name="dataLine">Data of a specific line in the file.</param>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.OnColumnError(MK.Framework.RCE.Common.DataErrorEventArgs)">
+            <summary>
+            Raises the DataError event of the DelimitedTextFileReader.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.CleanUpReader">
+            <summary>
+            Dispose reader.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.Common.DelimitedTextFileReader`1.Dispose">
+            <summary>
+            Dispose resources when not in used.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DelimitedTextFileReader`1.LineCount">
+            <summary>
+            Gets the number of line count.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DelimitedTextFileReader`1.ErrorCount">
+            <summary>
+            Gets the number of error count.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DelimitedTextFileReader`1.ReadCount">
+            <summary>
+            Get the number of read count.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DelimitedTextFileReader`1.Delimiter">
+            <summary>
+            Gets or sets the delimiter character.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DelimitedTextFileReader`1.Headers">
+            <summary>
+            Gets or sets a string of array for headers.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DelimitedTextFileReader`1.ColumnMatch">
+            <summary>
+            Gets or sets the ColumnMatchType.
+            </summary>
+        </member>
+        <member name="E:MK.Framework.RCE.Common.DelimitedTextFileReader`1.DataError">
+            <summary>
+            Represents a delegate to the DataError event handling.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.DelimitedTextFileReader`1.Filename">
+            <summary>
+            Gets or sets the name of the file.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.RCE.Common.ReadResult`1">
+            <summary>
+            Provides a storage for the read result
+            </summary>
+            <typeparam name="T">The type of objects to enumerate.This type parameter is covariant. That is,
+                you can use either the type you specified or any type that is more derived.
+               For more information about covariance and contravariance, see Covariance
+                and Contravariance in Generics.</typeparam>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.ReadResult`1.LineCount">
+            <summary>
+            Gets or sets the line count of the file.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.ReadResult`1.ReadCount">
+            <summary>
+            Gets or sets the read count for the file.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.ReadResult`1.Entity">
+            <summary>
+            Gets or sets the generic Entity object where T is the datatype of the object.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.ReadResult`1.ValidationErrors">
+            <summary>
+            Gets or sets a list of Validation Results.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.ReadResult`1.IsValid">
+            <summary>
+            Gets or sets whether the specified read result is valid.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.Common.ReadResult`1.Raw">
+            <summary>
+            Gets or sets the data for the read result.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.RCE.SqlDataCache`1">
+            <summary>
+            A SqlDataCache that implements data caching for SQL Database.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:MK.Framework.RCE.SqlDataCache`1._dependency">
+            <summary>
+            An object represents a query notification dependency between an application and an instance of SQL Server.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.SqlDataCache`1._hasDataChanged">
+            <summary>
+            Indicates whether there is any data changes.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.#ctor(System.String,System.String,System.String,System.Func{System.Data.IDataReader,System.Collections.Generic.List{`0}})">
+            <summary>
+            Initialize the SQLDataCache with a specified key, connection string, sql statement and the load function. 
+            This class should only be used in Data Access Components.
+            </summary>
+            <param name="key">The name of the cache item.</param>
+            <param name="connectionString">The connection string to monitor.</param>
+            <param name="sqlStatement">The SQL Statement to monitor for changes.</param>
+            <param name="loadFunc">The Function to execute to load data.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.#ctor(System.String,System.String,System.String,System.Func{System.Data.IDataReader,System.Collections.Generic.List{`0}},System.String,System.String)">
+            <summary>
+            Initialize the SQLDataCache with a specified key, connection string, sql statement, load function, service and queue name of the service broker. 
+            This class should only be used in Data Access Components.
+            </summary>
+            <param name="key">The name of the cache item.</param>
+            <param name="connectionString">The connection string to monitor.</param>
+            <param name="sqlStatement">The SQL Statement to monitor for changes.</param>
+            <param name="loadFunc">The Function to execute to load data.</param>
+            <param name="serviceName">Name of the service for the service broker.</param>
+            <param name="queueName">Name of queue for the service broker.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.#ctor(System.String,System.String,System.String,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Func{System.Data.IDataReader,System.Collections.Generic.List{`0}})">
+            <summary>
+            Initialize the SQLDataCache with a specified key, connection string, sql statement, list of database parameters and the load function. 
+            This class should only be used in Data Access Components.
+            </summary>
+            <param name="key">The name of the cache item.</param>
+            <param name="connectionString">The connection string to monitor.</param>
+            <param name="sqlStatement">The SQL Statement to monitor for changes.</param>
+            <param name="parameters">List of database parameters.</param>
+            <param name="loadFunc">The Function to execute to load data.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.#ctor(System.String,System.String,System.String,System.Data.CommandType,System.Func{System.Data.IDataReader,System.Collections.Generic.List{`0}})">
+            <summary>
+            Initialize the SQLDataCache with a specified key, connection string, sql statement, specified command type and the load function. 
+            This class should only be used in Data Access Components.
+            </summary>
+            <param name="key">The name of the cache item.</param>
+            <param name="connectionString">The connection string to monitor.</param>
+            <param name="sqlStatement">The SQL Statement to monitor for changes.</param>
+            <param name="commandType">A CommandType that specified what type of command used for the query.</param>
+            <param name="loadFunc">The Function to execute to load data.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.#ctor(System.String,System.String,System.String,System.Data.CommandType,System.Func{System.Data.IDataReader,System.Collections.Generic.List{`0}},System.String,System.String)">
+            <summary>
+            Initialize the SQLDataCache with a specified key, connection string, sql statement, specified command type, load function, 
+            This class should only be used in Data Access Components.
+            </summary>
+            <param name="key">The name of the cache item.</param>
+            <param name="connectionString">The connection string to monitor.</param>
+            <param name="sqlStatement">The SQL Statement to monitor for changes.</param>
+            <param name="commandType">A CommandType that specified what type of command used for the query.</param>
+            <param name="loadFunc">The Function to execute to load data.</param>
+            <param name="serviceName">Name of the service for the service broker.</param>
+            <param name="queueName">Name of queue for the service broker.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.#ctor(System.String,System.String,System.String,System.Collections.Generic.List{System.Data.Common.DbParameter},System.Data.CommandType,System.Func{System.Data.IDataReader,System.Collections.Generic.List{`0}},System.String,System.String)">
+            <summary>
+            Initialize the SQLDataCache with a specified key, connection string, sql statement, list of database parameters, 
+            specified command type, load function, service and queue name of the service broker. 
+            This class should only be used in Data Access Components.
+            </summary>
+            <param name="key">The name of the cache item.</param>
+            <param name="connectionString">The connection string to monitor.</param>
+            <param name="sqlStatement">The SQL Statement to monitor for changes.</param>
+            <param name="parameters">List of database parameters.</param>
+            <param name="commandType">A CommandType that specified what type of command used for the query.</param>
+            <param name="loadFunc">The Function to execute to load data.</param>
+            <param name="serviceName">Name of the service for the service broker.</param>
+            <param name="queueName">Name of queue for the service broker.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.Initialize">
+            <summary>
+            Remove invalid handle and start service broker.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.CurrentDomain_DomainUnload(System.Object,System.EventArgs)">
+            <summary>
+            Performs handling when a System.AppDomain is about to be unloaded.
+            </summary>
+            <param name="sender">Object that triggers the event.</param>
+            <param name="e">Information that contains information about the domain unload event.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.GetMonitor">
+            <summary>
+            Returns a SqlChangeMonitor with the associated dependency.
+            </summary>
+            <returns>A SqlChangeMonitor object.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.CreateCacheItem(System.Runtime.Caching.CacheItemPolicy@)">
+            <summary>
+            Creates the cache item and gets the cache item policy.
+            </summary>
+            <param name="policy">A set of eviction and expiration details for the specific cache
+                item.</param>
+            <returns>A cache item in the cache.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.CacheUpdateCallback(System.Runtime.Caching.CacheEntryUpdateArguments)">
+            <summary>
+            A delegate that is called before a cache entry is removed from the cache.
+            </summary>
+            <param name="args">Information about a cache entry that will be removed from the cache.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.GetContent">
+            <summary>
+            Loads data from the database.
+            </summary>
+            <returns>The type specified by caller</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.CreateCommand(Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase)">
+            <summary>
+            Creates a SqlCommand and set its CommandType.
+            </summary>
+            <param name="db">A SqlDatabase object.</param>
+            <returns>A SqlCommand</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.AddParameters(System.Data.Common.DbCommand)">
+            <summary>
+            Adds the parameters to the command.
+            </summary>
+            <param name="cmd">A DbCommand object.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.SqlDataCache`1.dependency_OnChange(System.Object,System.Data.SqlClient.SqlNotificationEventArgs)">
+            <summary>
+            Performs handling when a notification is received for any of the commands associated
+                with the System.Data.SqlClient.SqlDependency object.
+            </summary>
+            <param name="sender">Object that triggers the event.</param>
+            <param name="e">Information that contains information about the sql notification event.</param>
+        </member>
+        <member name="P:MK.Framework.RCE.SqlDataCache`1.ServiceBrokerQueueName">
+            <summary>
+            Gets the queue name of the service broker.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.SqlDataCache`1.ServiceBrokerServiceName">
+            <summary>
+            Gets the service name of the service broker.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.SqlDataCache`1.SqlStatement">
+            <summary>
+            Gets the sql statement used.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.SqlDataCache`1.ConnectionString">
+            <summary>
+            Get the connection string used.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.SqlDataCache`1.CommandType">
+            <summary>
+            Gets the command type that is used for the sql query.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.SqlDataCache`1.Parameters">
+            <summary>
+            Gets a list of database parameters.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.SqlDataCache`1.LoadFunction">
+            <summary>
+            Gets the function which is used to load data.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.RCE.TextFileCache">
+            <summary>
+            A TextFileCache that implements data caching for text file.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.RCE.TextFileCache.#ctor(System.String,System.String)">
+            <summary>
+            Initialized the TextFileCache with a specified key and the specified file name.
+            </summary>
+            <param name="key">A key value.</param>
+            <param name="filename">The name of the file.</param>
+        </member>
+        <member name="M:MK.Framework.RCE.TextFileCache.GetContent">
+            <summary>
+            Loads data from the file.
+            </summary>
+            <returns>The type specified by caller.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.TextFileCache.GetMonitor">
+            <summary>
+            Gets the object that monitors changes of the delimited file.
+            </summary>
+            <returns>Returns a HostFileChangeMonitor object.</returns>
+        </member>
+        <member name="M:MK.Framework.RCE.TextFileCache.CacheUpdateCallback(System.Runtime.Caching.CacheEntryUpdateArguments)">
+            <summary>
+            A delegate that is called before a cache entry is removed from the cache.
+            </summary>
+            <param name="args">Information about a cache entry that will be removed from the cache.</param>
+        </member>
+        <member name="P:MK.Framework.RCE.TextFileCache.Filename">
+            <summary>
+            Gets the name of the file.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.RCE.TextFileCache.Encoding">
+            <summary>
+            Gets the character encoding used.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.RCE.Common.TextFileDelimiter">
+            <summary>
+            Indicates text file delimiter used.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Common.TextFileDelimiter.Comma">
+            <summary>
+            Comma
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Common.TextFileDelimiter.Pipe">
+            <summary>
+            Pipe
+            </summary>
+        </member>
+        <member name="F:MK.Framework.RCE.Common.TextFileDelimiter.Space">
+            <summary>
+            Space
+            </summary>
+        </member>
+    </members>
+</doc>

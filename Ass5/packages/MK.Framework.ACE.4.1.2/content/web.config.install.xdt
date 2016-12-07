@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <dummyElement xdt:Transform="InsertIfMissing" />
+	<configSections xdt:Transform="InsertBefore(/configuration/*[1])" />
+	<configSections xdt:Locator="XPath(/configuration/configSections[last()])">
+		<sectionGroup name="macrokiosk" xdt:Transform="InsertIfMissing">
+			<section name="accessControl" type="MK.Framework.ACE.Configuration.AccessControlSection, MK.Framework.ACE, Version=4.1.0.1, Culture=neutral, PublicKeyToken=null" allowLocation="true" allowDefinition="Everywhere" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />		
+		</sectionGroup>
+		<sectionGroup name="macrokiosk">
+			<section name="accessControl" type="MK.Framework.ACE.Configuration.AccessControlSection, MK.Framework.ACE, Version=4.1.0.1, Culture=neutral, PublicKeyToken=null" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>	
+		</sectionGroup>
+	</configSections>
+	<configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+	
+	<connectionStrings xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+	<macrokiosk xdt:Transform="InsertAfter(/configuration/configSections)" />
+	<macrokiosk xdt:Locator="XPath(/configuration/macrokiosk[last()])">
+		<accessControl xdt:Transform="InsertIfMissing">
+			<authentication connectionName="AccessControl"/>
+			<passwordControl strongPassword="true"/>
+			<smtpServer host="mail.macrokiosk.com"/>
+		</accessControl>
+	</macrokiosk>
+	<macrokiosk xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+	
+	<connectionStrings xdt:Transform="InsertAfter(/configuration/configSections)" />
+	<connectionStrings xdt:Locator="XPath(/configuration/connectionStrings[last()])">
+		<add name="AccessControl" connectionString="server=.;database=frameworks;uid=sa;pwd=p@ssw0rd" providerName="System.Data.SqlClient"  xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing"/>
+	</connectionStrings>
+	<connectionStrings xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+	
+	<dummyElement xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+</configuration>

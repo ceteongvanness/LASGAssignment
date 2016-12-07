@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClassModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClassModel ClassName="TaskComponent" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Task business component." ProductName="Ass5.Business">
+    <NamespacesToImport>
+      <string>System</string>
+      <string>System.Collections.Generic</string>
+      <string>System.Collections.ObjectModel</string>
+      <string>Ass5.Entities</string>
+      <string>Ass5.Data</string>
+    </NamespacesToImport>
+    <Methods>
+      <BusinessMethodModel IsUpdated="false" Name="Apply" XmlComment="Apply business method. " ReturnSignature="">
+        <AccessModifier>Public</AccessModifier>
+        <CallMethods>
+          <MethodModel Name="Create" ComponentName="TaskDAC" ReturnSignature="Task" IsReturnSignature="true" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IsInternallyDeclared="false" />
+            </Parameters>
+          </MethodModel>
+          <MethodModel Name="Create" ComponentName="TaskLogDAC" ReturnSignature="TaskLog" IsReturnSignature="false" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="TaskLog" Name="taskLog" IsInternallyDeclared="true" />
+            </Parameters>
+          </MethodModel>
+        </CallMethods>
+      </BusinessMethodModel>
+      <BusinessMethodModel IsUpdated="false" Name="Approve" XmlComment="Approve business method. " ReturnSignature="">
+        <AccessModifier>Public</AccessModifier>
+        <CallMethods>
+          <MethodModel Name="UpdateById" ComponentName="TaskDAC" ReturnSignature="void" IsReturnSignature="false" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IsInternallyDeclared="false" />
+            </Parameters>
+          </MethodModel>
+          <MethodModel Name="Create" ComponentName="TaskLogDAC" ReturnSignature="TaskLog" IsReturnSignature="false" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="TaskLog" Name="taskLog" IsInternallyDeclared="true" />
+            </Parameters>
+          </MethodModel>
+        </CallMethods>
+      </BusinessMethodModel>
+      <BusinessMethodModel IsUpdated="false" Name="Cancel" XmlComment="Cancel business method. " ReturnSignature="">
+        <AccessModifier>Public</AccessModifier>
+        <CallMethods>
+          <MethodModel Name="UpdateById" ComponentName="TaskDAC" ReturnSignature="void" IsReturnSignature="false" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IsInternallyDeclared="false" />
+            </Parameters>
+          </MethodModel>
+          <MethodModel Name="Create" ComponentName="TaskLogDAC" ReturnSignature="TaskLog" IsReturnSignature="false" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="TaskLog" Name="taskLog" IsInternallyDeclared="true" />
+            </Parameters>
+          </MethodModel>
+        </CallMethods>
+      </BusinessMethodModel>
+      <BusinessMethodModel IsUpdated="false" Name="ListTask" XmlComment="ListTask business method. " ReturnSignature="">
+        <AccessModifier>Public</AccessModifier>
+        <CallMethods>
+          <MethodModel Name="SelectPage" ComponentName="TaskDAC" ReturnSignature="List&lt;Task&gt;" IsReturnSignature="true" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="int" Name="currentPage" IsInternallyDeclared="false" />
+            </Parameters>
+          </MethodModel>
+        </CallMethods>
+      </BusinessMethodModel>
+      <BusinessMethodModel IsUpdated="false" Name="GetTask" XmlComment="GetTask business method. " ReturnSignature="">
+        <AccessModifier>Public</AccessModifier>
+        <CallMethods>
+          <MethodModel Name="SelectById" ComponentName="TaskDAC" ReturnSignature="Task" IsReturnSignature="true" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="string" Name="taskID" IsInternallyDeclared="false" />
+            </Parameters>
+          </MethodModel>
+        </CallMethods>
+      </BusinessMethodModel>
+      <BusinessMethodModel IsUpdated="false" Name="Reject" XmlComment="Reject business method. " ReturnSignature="">
+        <AccessModifier>Public</AccessModifier>
+        <CallMethods>
+          <MethodModel Name="UpdateById" ComponentName="TaskDAC" ReturnSignature="void" IsReturnSignature="false" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IsInternallyDeclared="false" />
+            </Parameters>
+          </MethodModel>
+        </CallMethods>
+      </BusinessMethodModel>
+      <BusinessMethodModel IsUpdated="false" Name="Delay" XmlComment="Delay business method. " ReturnSignature="">
+        <AccessModifier>Public</AccessModifier>
+        <CallMethods>
+          <MethodModel Name="UpdateById" ComponentName="TaskDAC" ReturnSignature="void" IsReturnSignature="false" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IsInternallyDeclared="false" />
+            </Parameters>
+          </MethodModel>
+        </CallMethods>
+      </BusinessMethodModel>
+      <BusinessMethodModel IsUpdated="false" Name="Update" XmlComment="Update business method. " ReturnSignature="">
+        <AccessModifier>Public</AccessModifier>
+        <CallMethods>
+          <MethodModel Name="UpdateById" ComponentName="TaskDAC" ReturnSignature="void" IsReturnSignature="false" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IsInternallyDeclared="false" />
+            </Parameters>
+          </MethodModel>
+          <MethodModel Name="Create" ComponentName="TaskLogDAC" ReturnSignature="TaskLog" IsReturnSignature="false" TransactionBegin="false" TransactionEnd="false">
+            <Parameters>
+              <ParameterModel Type="TaskLog" Name="taskLog" IsInternallyDeclared="false" />
+            </Parameters>
+          </MethodModel>
+        </CallMethods>
+      </BusinessMethodModel>
+    </Methods>
+    <NonSuffixName>Task</NonSuffixName>
+  </ClassModel>
+</ArrayOfClassModel>

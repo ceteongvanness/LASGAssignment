@@ -1,0 +1,5 @@
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Data.dll
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Data.pdb
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Data\Ass5.Data\obj\Debug\Ass5.Data.csprojResolveAssemblyReference.cache
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Data\Ass5.Data\obj\Debug\Ass5.Data.dll
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Data\Ass5.Data\obj\Debug\Ass5.Data.pdb

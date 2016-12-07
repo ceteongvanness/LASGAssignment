@@ -1,0 +1,364 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Ass5.Workflows.TaskWorkflowService" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="Ass5.Workflows.TaskWorkflowService_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ae="clr-namespace:Ass5.Entities;assembly=Ass5.Entities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:awa="clr-namespace:Ass5.Workflows.Activities;assembly=Ass5.Workflows.Activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ssx="clr-namespace:System.ServiceModel.XamlIntegration;assembly=System.ServiceModel"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>Ass5.Entities</AssemblyReference>
+      <AssemblyReference>Ass5.Business</AssemblyReference>
+      <AssemblyReference>Ass5.Workflows.Activities</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Ass5.Workflows</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="p:CorrelationHandle" x:Name="__ReferenceID0" Name="_handle" />
+      <Variable x:TypeArguments="ae:Task" x:Name="__ReferenceID2" Name="_applyResult" />
+      <Variable x:TypeArguments="ae:Task" x:Name="__ReferenceID1" Name="_task" />
+      <Variable x:TypeArguments="ae:TaskLog" Name="_taskLog" />
+    </Flowchart.Variables>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+        <Sequence DisplayName="Apply" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <p:Receive x:Name="__ReferenceID3" Action="http://tempuri.org/ITaskWorkflowService/Apply" CanCreateInstance="True" DisplayName="Apply Receive" sap2010:WorkflowViewState.IdRef="Receive_1" OperationName="Apply" ProtectionLevel="None" ServiceContractName="ITaskWorkflowService">
+            <p:Receive.CorrelatesOn>
+              <p:XPathMessageQuery x:Key="key1">
+                <p:XPathMessageQuery.Namespaces>
+                  <ssx:XPathMessageContextMarkup>
+                    <x:String x:Key="xg0">http://schemas.datacontract.org/2004/07/Ass5.Entities</x:String>
+                    <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                  </ssx:XPathMessageContextMarkup>
+                </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:Apply/xgSc:task/xg0:CorrelationID</p:XPathMessageQuery>
+            </p:Receive.CorrelatesOn>
+            <p:Receive.CorrelatesWith>
+              <InArgument x:TypeArguments="p:CorrelationHandle">
+                <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">_handle</mca:CSharpValue>
+              </InArgument>
+            </p:Receive.CorrelatesWith>
+            <p:Receive.CorrelationInitializers>
+              <p:RequestReplyCorrelationInitializer>
+                <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                  <InArgument x:TypeArguments="p:CorrelationHandle">
+                    <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID0}" />
+                  </InArgument>
+                </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+              </p:RequestReplyCorrelationInitializer>
+            </p:Receive.CorrelationInitializers>
+            <p:ReceiveParametersContent>
+              <OutArgument x:TypeArguments="ae:Task" x:Key="task">
+                <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+              </OutArgument>
+            </p:ReceiveParametersContent>
+          </p:Receive>
+          <awa:Apply DisplayName="Apply" sap2010:WorkflowViewState.IdRef="Apply_1">
+            <awa:Apply.ApplyResult>
+              <OutArgument x:TypeArguments="ae:Task">
+                <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID2}" />
+              </OutArgument>
+            </awa:Apply.ApplyResult>
+            <awa:Apply.Task>
+              <InArgument x:TypeArguments="ae:Task">
+                <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+              </InArgument>
+            </awa:Apply.Task>
+          </awa:Apply>
+          <p:SendReply Request="{x:Reference __ReferenceID3}" Action="http://tempuri.org/ITaskWorkflowService/ApplyResponse" DisplayName="Apply Reply" sap2010:WorkflowViewState.IdRef="SendReply_1" PersistBeforeSend="True">
+            <p:SendParametersContent>
+              <InArgument x:TypeArguments="ae:Task" x:Key="ApplyResponseResult">
+                <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID2}" />
+              </InArgument>
+            </p:SendParametersContent>
+          </p:SendReply>
+        </Sequence>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+            <Pick sap2010:WorkflowViewState.IdRef="Pick_1">
+              <PickBranch sap2010:WorkflowViewState.IdRef="PickBranch_1">
+                <PickBranch.Trigger>
+                  <Sequence DisplayName="Approve" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <p:Receive x:Name="__ReferenceID4" Action="http://tempuri.org/ITaskWorkflowService/Approve" DisplayName="Approve Receive" sap2010:WorkflowViewState.IdRef="Receive_2" OperationName="Approve" ProtectionLevel="None" ServiceContractName="ITaskWorkflowService">
+                      <p:Receive.CorrelatesOn>
+                        <p:XPathMessageQuery x:Key="key1">
+                          <p:XPathMessageQuery.Namespaces>
+                            <ssx:XPathMessageContextMarkup>
+                              <x:String x:Key="xg0">http://schemas.datacontract.org/2004/07/Ass5.Entities</x:String>
+                              <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                            </ssx:XPathMessageContextMarkup>
+                          </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:Approve/xgSc:task/xg0:CorrelationID</p:XPathMessageQuery>
+                      </p:Receive.CorrelatesOn>
+                      <p:Receive.CorrelatesWith>
+                        <InArgument x:TypeArguments="p:CorrelationHandle">
+                          <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">_handle</mca:CSharpValue>
+                        </InArgument>
+                      </p:Receive.CorrelatesWith>
+                      <p:Receive.CorrelationInitializers>
+                        <p:RequestReplyCorrelationInitializer>
+                          <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                            <InArgument x:TypeArguments="p:CorrelationHandle">
+                              <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID0}" />
+                            </InArgument>
+                          </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                        </p:RequestReplyCorrelationInitializer>
+                      </p:Receive.CorrelationInitializers>
+                      <p:ReceiveParametersContent>
+                        <OutArgument x:TypeArguments="ae:Task" x:Key="task">
+                          <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                        </OutArgument>
+                      </p:ReceiveParametersContent>
+                    </p:Receive>
+                    <awa:Approve DisplayName="Approve" sap2010:WorkflowViewState.IdRef="Approve_1">
+                      <awa:Approve.Task>
+                        <InArgument x:TypeArguments="ae:Task">
+                          <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                        </InArgument>
+                      </awa:Approve.Task>
+                    </awa:Approve>
+                    <p:SendReply Request="{x:Reference __ReferenceID4}" Action="http://tempuri.org/ITaskWorkflowService/ApproveResponse" DisplayName="Approve Reply" sap2010:WorkflowViewState.IdRef="SendReply_2" PersistBeforeSend="True" />
+                  </Sequence>
+                </PickBranch.Trigger>
+              </PickBranch>
+              <PickBranch DisplayName="Branch2" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+                <PickBranch.Trigger>
+                  <Sequence DisplayName="Reject" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <p:Receive x:Name="__ReferenceID5" Action="http://tempuri.org/ITaskWorkflowService/Reject" DisplayName="Reject Receive" sap2010:WorkflowViewState.IdRef="Receive_3" OperationName="Reject" ProtectionLevel="None" ServiceContractName="ITaskWorkflowService">
+                      <p:Receive.CorrelatesOn>
+                        <p:XPathMessageQuery x:Key="key1">
+                          <p:XPathMessageQuery.Namespaces>
+                            <ssx:XPathMessageContextMarkup>
+                              <x:String x:Key="xg0">http://schemas.datacontract.org/2004/07/Ass5.Entities</x:String>
+                              <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                            </ssx:XPathMessageContextMarkup>
+                          </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:Reject/xgSc:task/xg0:CorrelationID</p:XPathMessageQuery>
+                      </p:Receive.CorrelatesOn>
+                      <p:Receive.CorrelatesWith>
+                        <InArgument x:TypeArguments="p:CorrelationHandle">
+                          <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">_handle</mca:CSharpValue>
+                        </InArgument>
+                      </p:Receive.CorrelatesWith>
+                      <p:Receive.CorrelationInitializers>
+                        <p:RequestReplyCorrelationInitializer>
+                          <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                            <InArgument x:TypeArguments="p:CorrelationHandle">
+                              <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID0}" />
+                            </InArgument>
+                          </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                        </p:RequestReplyCorrelationInitializer>
+                      </p:Receive.CorrelationInitializers>
+                      <p:ReceiveParametersContent>
+                        <OutArgument x:TypeArguments="ae:Task" x:Key="task">
+                          <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                        </OutArgument>
+                      </p:ReceiveParametersContent>
+                    </p:Receive>
+                    <awa:Reject DisplayName="Reject" sap2010:WorkflowViewState.IdRef="Reject_1">
+                      <awa:Reject.Task>
+                        <InArgument x:TypeArguments="ae:Task">
+                          <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                        </InArgument>
+                      </awa:Reject.Task>
+                    </awa:Reject>
+                    <p:SendReply Request="{x:Reference __ReferenceID5}" Action="http://tempuri.org/ITaskWorkflowService/RejectResponse" DisplayName="Reject Reply" sap2010:WorkflowViewState.IdRef="SendReply_3" PersistBeforeSend="True" />
+                  </Sequence>
+                </PickBranch.Trigger>
+              </PickBranch>
+              <PickBranch sap2010:WorkflowViewState.IdRef="PickBranch_3">
+                <PickBranch.Trigger>
+                  <Sequence DisplayName="Cancel" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <p:Receive x:Name="__ReferenceID6" Action="http://tempuri.org/ITaskWorkflowService/Cancel" DisplayName="Cancel Receive" sap2010:WorkflowViewState.IdRef="Receive_4" OperationName="Cancel" ProtectionLevel="None" ServiceContractName="ITaskWorkflowService">
+                      <p:Receive.CorrelatesOn>
+                        <p:XPathMessageQuery x:Key="key1">
+                          <p:XPathMessageQuery.Namespaces>
+                            <ssx:XPathMessageContextMarkup>
+                              <x:String x:Key="xg0">http://schemas.datacontract.org/2004/07/Ass5.Entities</x:String>
+                              <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                            </ssx:XPathMessageContextMarkup>
+                          </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:Cancel/xgSc:task/xg0:CorrelationID</p:XPathMessageQuery>
+                      </p:Receive.CorrelatesOn>
+                      <p:Receive.CorrelatesWith>
+                        <InArgument x:TypeArguments="p:CorrelationHandle">
+                          <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">_handle</mca:CSharpValue>
+                        </InArgument>
+                      </p:Receive.CorrelatesWith>
+                      <p:Receive.CorrelationInitializers>
+                        <p:RequestReplyCorrelationInitializer>
+                          <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                            <InArgument x:TypeArguments="p:CorrelationHandle">
+                              <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID0}" />
+                            </InArgument>
+                          </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                        </p:RequestReplyCorrelationInitializer>
+                      </p:Receive.CorrelationInitializers>
+                      <p:ReceiveParametersContent>
+                        <OutArgument x:TypeArguments="ae:Task" x:Key="task">
+                          <VariableReference x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                        </OutArgument>
+                      </p:ReceiveParametersContent>
+                    </p:Receive>
+                    <awa:Cancel DisplayName="Cancel" sap2010:WorkflowViewState.IdRef="Cancel_1">
+                      <awa:Cancel.Task>
+                        <InArgument x:TypeArguments="ae:Task">
+                          <VariableValue x:TypeArguments="ae:Task" Variable="{x:Reference __ReferenceID1}" />
+                        </InArgument>
+                      </awa:Cancel.Task>
+                    </awa:Cancel>
+                    <p:SendReply Request="{x:Reference __ReferenceID6}" Action="http://tempuri.org/ITaskWorkflowService/CancelResponse" DisplayName="Cancel Reply" sap2010:WorkflowViewState.IdRef="SendReply_4" PersistBeforeSend="True" />
+                  </Sequence>
+                </PickBranch.Trigger>
+              </PickBranch>
+              <PickBranch sap2010:WorkflowViewState.IdRef="PickBranch_4">
+                <PickBranch.Trigger>
+                  <Delay sap2010:WorkflowViewState.IdRef="Delay_1">
+                    <InArgument x:TypeArguments="x:TimeSpan">
+                      <mca:CSharpValue x:TypeArguments="x:TimeSpan">new TimeSpan(0,2,0)</mca:CSharpValue>
+                    </InArgument>
+                  </Delay>
+                </PickBranch.Trigger>
+                <Sequence DisplayName="Update" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <awa:Update DisplayName="Update" sap2010:WorkflowViewState.IdRef="Update_1">
+                    <awa:Update.Task>
+                      <InArgument x:TypeArguments="ae:Task">
+                        <mca:CSharpValue x:TypeArguments="ae:Task">_applyResult</mca:CSharpValue>
+                      </InArgument>
+                    </awa:Update.Task>
+                    <awa:Update.TaskLog>
+                      <InArgument x:TypeArguments="ae:TaskLog">
+                        <mca:CSharpValue x:TypeArguments="ae:TaskLog">null</mca:CSharpValue>
+                      </InArgument>
+                    </awa:Update.TaskLog>
+                  </awa:Update>
+                </Sequence>
+              </PickBranch>
+            </Pick>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <sads:DebugSymbol.Symbol>d21DOlxVc2Vyc1xldC5jaGVhaFxkb2N1bWVudHNcdmlzdWFsIHN0dWRpbyAyMDE1XFByb2plY3RzXEFzczVcQnVzaW5lc3NcQXNzNS5Xb3JrZmxvd3NcVGFza1dvcmtmbG93U2VydmljZS54YW1sLi0DjwIPAgEBNgloFAIBQ2sNhwIUAgECNwtUFwIBS1ULYBcCAUhhC2cZAgFEbA+XARwCATSYAQ/DARwCASXEAQ/vARwCARbwAQ+GAhwCAQNDEUNhAgFOURFRaAIBTUoVSnQCAUxYEVhoAgFKXRFdZAIBSWQRZGQCAUVuE5UBHgIBNZoBE8EBHgIBJsYBE+0BHgIBF/IBE/YBGwIBEPgBEYUCHAIBBG8VjAEhAgE7jQEVkwEjAgE5lAEVlAHvAQIBNpsBFbgBIQIBLLkBFb8BIgIBKsABFcAB7QECASfHARXkASECAR3lARXrASICARvsARXsAe0BAgEY9AEX9AFqAgER+QEThAIgAgEFext7awIBPokBG4kBcgIBPYIBH4IBfgIBPJABG5ABbgIBOqcBG6cBawIBL7UBG7UBcgIBLq4BH64BfgIBLbwBG7wBbgIBK9MBG9MBawIBIOEBG+EBcgIBH9oBH9oBfgIBHugBG+gBbgIBHPwBGfwBYgIBC4ECGYECXQIBBg==</sads:DebugSymbol.Symbol>
+  </Flowchart>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Receive_1" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="Apply_1" sap:VirtualizedContainerService.HintSize="255,88" />
+      <sap2010:ViewStateData Id="SendReply_1" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Receive_2" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="Approve_1" sap:VirtualizedContainerService.HintSize="255,62" />
+      <sap2010:ViewStateData Id="SendReply_2" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="277,438">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PickBranch_1" sap:VirtualizedContainerService.HintSize="307,696" />
+      <sap2010:ViewStateData Id="Receive_3" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="Reject_1" sap:VirtualizedContainerService.HintSize="255,62" />
+      <sap2010:ViewStateData Id="SendReply_3" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="277,438">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PickBranch_2" sap:VirtualizedContainerService.HintSize="307,696" />
+      <sap2010:ViewStateData Id="Receive_4" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="Cancel_1" sap:VirtualizedContainerService.HintSize="255,62" />
+      <sap2010:ViewStateData Id="SendReply_4" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="277,438">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PickBranch_3" sap:VirtualizedContainerService.HintSize="307,696" />
+      <sap2010:ViewStateData Id="Delay_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Update_1" sap:VirtualizedContainerService.HintSize="227,88" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="249,212">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PickBranch_4" sap:VirtualizedContainerService.HintSize="279,696" />
+      <sap2010:ViewStateData Id="Pick_1" sap:VirtualizedContainerService.HintSize="1434,742">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,274.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,144.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,195.5 300,274.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="614,636">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,144.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Ass5.Workflows.TaskWorkflowService_1" sap:VirtualizedContainerService.HintSize="654,716" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e36bb42f-1293-4ad2-a9c2-a09f3033073f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2311/TaskWorkflowService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TaskWorkflowService.xsd" MetadataType="Schema" ID="6c1c992a-7c80-42d4-913a-9518fbb0c03c" SourceId="1" SourceUrl="http://localhost:2311/TaskWorkflowService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TaskWorkflowService.wsdl" MetadataType="Wsdl" ID="2853f002-f002-4449-bb2a-5075b88a6deb" SourceId="1" SourceUrl="http://localhost:2311/TaskWorkflowService.svc?wsdl" />
+    <MetadataFile FileName="TaskWorkflowService1.xsd" MetadataType="Schema" ID="8359ec6b-7e0b-4a1e-8b87-19f591891364" SourceId="1" SourceUrl="http://localhost:2311/TaskWorkflowService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TaskWorkflowService.disco" MetadataType="Disco" ID="5abf8738-4dc7-45d4-bd69-4f9ae6fb3438" SourceId="1" SourceUrl="http://localhost:2311/TaskWorkflowService.svc?disco" />
+    <MetadataFile FileName="TaskWorkflowService2.xsd" MetadataType="Schema" ID="51dab018-1ddb-4f8d-ac21-7d1943f394ff" SourceId="1" SourceUrl="http://localhost:2311/TaskWorkflowService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MK.Framework.SNE.Entities</name>
+    </assembly>
+    <members>
+        <member name="T:MK.Framework.SNE.Entities.DbSequence">
+            <summary>
+            Database Sequence class
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Entities.DbSequence.MachineName">
+            <summary>
+            Machine name that runs the Sequence.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Entities.DbSequence.Sequence">
+            <summary>
+            Sequence object.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Entities.Sequence">
+            <summary>
+            A Sequence struct
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Entities.Sequence.Owner">
+            <summary>
+            Name of the Sequencer owner
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Entities.Sequence.Minimum">
+            <summary>
+            Minimum value for the Sequence
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Entities.Sequence.Maximum">
+            <summary>
+            Maximum value for the Sequence
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Entities.Sequence.Current">
+            <summary>
+            Current value for the Sequence
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Entities.Sequence.Prefix">
+            <summary>
+            Prefix for the Sequence
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Entities.Sequence.Padding">
+            <summary>
+            Padding for the Sequence
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Entities.Sequence.Step">
+            <summary>
+            Step value for each new Sequence number
+            </summary>
+        </member>
+    </members>
+</doc>

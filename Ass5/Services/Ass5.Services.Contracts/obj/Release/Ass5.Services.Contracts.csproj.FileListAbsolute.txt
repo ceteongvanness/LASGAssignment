@@ -1,0 +1,5 @@
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Services.Contracts.dll
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Services.Contracts.pdb
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Services\Ass5.Services.Contracts\obj\Release\Ass5.Services.Contracts.csprojResolveAssemblyReference.cache
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Services\Ass5.Services.Contracts\obj\Release\Ass5.Services.Contracts.dll
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Services\Ass5.Services.Contracts\obj\Release\Ass5.Services.Contracts.pdb

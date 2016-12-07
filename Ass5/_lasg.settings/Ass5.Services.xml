@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClassModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClassModel ClassName="TaskService" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Task service component." ProductName="Ass5.Services" ServiceNamespace="" FaultContractName="Fault" GenerateHandler="false" InstanceContextMode="PerCall" ConcurrencyMode="Multiple" HasHttpsEndpoint="false">
+    <NamespacesToImport>
+      <string>System</string>
+      <string>System.Collections.Generic</string>
+      <string>System.Collections.ObjectModel</string>
+      <string>System.ServiceModel</string>
+      <string>Ass5.Business</string>
+      <string>Ass5.Entities</string>
+      <string>MK.Framework.ACE.Entities</string>
+    </NamespacesToImport>
+    <Methods>
+      <MethodModel Name="Apply" ComponentName="TaskComponent" Signature="Apply(Task task)" ReturnSignature="Task" CallSignature="Apply(task)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the Apply business method of the TaskComponent.">
+        <Namespaces>
+          <string>Ass5.Entities</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="Approve" ComponentName="TaskComponent" Signature="Approve(Task task)" ReturnSignature="void" CallSignature="Approve(task)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the Approve business method of the TaskComponent.">
+        <Namespaces>
+          <string>Ass5.Entities</string>
+          <string>System</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="Cancel" ComponentName="TaskComponent" Signature="Cancel(Task task)" ReturnSignature="void" CallSignature="Cancel(task)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the Cancel business method of the TaskComponent.">
+        <Namespaces>
+          <string>Ass5.Entities</string>
+          <string>System</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="Delay" ComponentName="TaskComponent" Signature="Delay(Task task)" ReturnSignature="void" CallSignature="Delay(task)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the Delay business method of the TaskComponent.">
+        <Namespaces>
+          <string>Ass5.Entities</string>
+          <string>System</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="Export" ComponentName="TaskComponent" Signature="Export()" ReturnSignature="void" CallSignature="Export()" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the Export business method of the TaskComponent.">
+        <Namespaces>
+          <string>System</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="Reject" ComponentName="TaskComponent" Signature="Reject(Task task)" ReturnSignature="void" CallSignature="Reject(task)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the Reject business method of the TaskComponent.">
+        <Namespaces>
+          <string>Ass5.Entities</string>
+          <string>System</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="Update" ComponentName="TaskComponent" Signature="Update(Task task, TaskLog taskLog)" ReturnSignature="void" CallSignature="Update(task, taskLog)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the Update business method of the TaskComponent.">
+        <Namespaces>
+          <string>Ass5.Entities</string>
+          <string>System</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="GetTask" ComponentName="TaskComponent" Signature="GetTask(string taskID)" ReturnSignature="Task" CallSignature="GetTask(taskID)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the GetTask business method of the TaskComponent.">
+        <Namespaces>
+          <string>System</string>
+          <string>Ass5.Entities</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="GetUserPermission" ComponentName="TaskComponent" Signature="GetUserPermission(long userID, string policyId)" ReturnSignature="AccessPolicy" CallSignature="GetUserPermission(userID, policyId)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the GetUserPermission business method of the TaskComponent.">
+        <Namespaces>
+          <string>System</string>
+          <string>MK.Framework.ACE.Entities</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="ListTask" ComponentName="TaskComponent" Signature="ListTask(int currentPage)" ReturnSignature="List&lt;Task&gt;" CallSignature="ListTask(currentPage)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the ListTask business method of the TaskComponent.">
+        <Namespaces>
+          <string>System</string>
+          <string>Ass5.Entities</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+      <MethodModel Name="LoginVerify" ComponentName="TaskComponent" Signature="LoginVerify(string Username, string Password)" ReturnSignature="User" CallSignature="LoginVerify(username, password)" HandlesException="false" HasFaultContract="false" IsRest="false" RestRequestFormat="Xml" RestResponseFormat="Xml" RestBodyStyle="Bare" IsUpdated="false" XmlComment="Calls the LoginVerify business method of the TaskComponent.">
+        <Namespaces>
+          <string>System</string>
+          <string>MK.Framework.ACE.Entities</string>
+          <string>Ass5.Business</string>
+        </Namespaces>
+      </MethodModel>
+    </Methods>
+    <EndPoints>
+      <EndpointModel Name="basicHttpTaskService" Address="http://localhost:9090/TaskService" Binding="basicHttpBinding" IsUpdated="false" IsHttps="false" />
+    </EndPoints>
+  </ClassModel>
+</ArrayOfClassModel>

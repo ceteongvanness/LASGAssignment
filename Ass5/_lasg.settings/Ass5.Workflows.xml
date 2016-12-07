@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfWorkflowModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <WorkflowModel ClassName="TaskWorkflowService" IsUpdated="true" GenerateXmlComments="false" UseDefaultComments="false" ProductName="Ass5" ServiceContractName="ITaskWorkflowService" ServiceNamespace="http://tempuri.org/" HasHttpsEndpoint="false">
+    <NamespacesToImport />
+    <Activities>
+      <ActivityModel ClassName="Apply" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Apply workflow activity." ProductName="Ass5.Workflows" ActivityType="CodeActivity" ServiceContractName="ITaskWorkflowService" ServiceNamespace="http://tempuri.org/" WrapperOnly="false" WrapperType="ReceiveAndSendReply" WrapperActivityName="ApplyReceiveSend" CanCreateInstance="true" PersistBeforeSend="true" EmitTrackingRecord="None">
+        <NamespacesToImport>
+          <string>System.Collections.Generic</string>
+          <string>Ass5.Entities</string>
+          <string>Ass5.Business</string>
+        </NamespacesToImport>
+        <Methods>
+          <MethodModel Name="Apply" ComponentName="TaskComponent" ReturnSignature="Task" Namespaces="Ass5.Entities Ass5.Business">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+              <ParameterModel Type="Task" Name="applyResult" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="true" ArgumentType="Out" />
+            </Parameters>
+          </MethodModel>
+        </Methods>
+        <Declarations>
+          <ParameterModel Type="Task" Name="applyResult" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="true" ArgumentType="Out" />
+          <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+        </Declarations>
+      </ActivityModel>
+      <ActivityModel ClassName="Approve" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Approve workflow activity." ProductName="Ass5.Workflows" ActivityType="CodeActivity" ServiceContractName="ITaskWorkflowService" ServiceNamespace="http://tempuri.org/" WrapperOnly="false" WrapperType="ReceiveAndSendReply" WrapperActivityName="ApproveReceiveSend" CanCreateInstance="false" PersistBeforeSend="true" EmitTrackingRecord="None">
+        <NamespacesToImport>
+          <string>System.Collections.Generic</string>
+          <string>Ass5.Entities</string>
+          <string>Ass5.Business</string>
+        </NamespacesToImport>
+        <Methods>
+          <MethodModel Name="Approve" ComponentName="TaskComponent" ReturnSignature="void" Namespaces="Ass5.Entities System Ass5.Business">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+            </Parameters>
+          </MethodModel>
+        </Methods>
+        <Declarations>
+          <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+        </Declarations>
+      </ActivityModel>
+      <ActivityModel ClassName="Cancel" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Cancel workflow activity." ProductName="Ass5.Workflows" ActivityType="CodeActivity" ServiceContractName="ITaskWorkflowService" ServiceNamespace="http://tempuri.org/" WrapperOnly="false" WrapperType="ReceiveAndSendReply" WrapperActivityName="CancelReceiveSend" CanCreateInstance="false" PersistBeforeSend="true" EmitTrackingRecord="None">
+        <NamespacesToImport>
+          <string>System.Collections.Generic</string>
+          <string>Ass5.Entities</string>
+          <string>Ass5.Business</string>
+        </NamespacesToImport>
+        <Methods>
+          <MethodModel Name="Cancel" ComponentName="TaskComponent" ReturnSignature="void" Namespaces="Ass5.Entities System Ass5.Business">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+            </Parameters>
+          </MethodModel>
+        </Methods>
+        <Declarations>
+          <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+        </Declarations>
+      </ActivityModel>
+      <ActivityModel ClassName="Delay" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Delay workflow activity." ProductName="Ass5.Workflows" ActivityType="CodeActivity" ServiceContractName="ITaskWorkflowService" ServiceNamespace="http://tempuri.org/" WrapperOnly="false" WrapperType="ReceiveAndSendReply" WrapperActivityName="DelayReceiveSend" CanCreateInstance="false" PersistBeforeSend="true" EmitTrackingRecord="None">
+        <NamespacesToImport>
+          <string>System.Collections.Generic</string>
+          <string>Ass5.Entities</string>
+          <string>Ass5.Business</string>
+        </NamespacesToImport>
+        <Methods>
+          <MethodModel Name="Delay" ComponentName="TaskComponent" ReturnSignature="void" Namespaces="Ass5.Entities System Ass5.Business">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+            </Parameters>
+          </MethodModel>
+        </Methods>
+        <Declarations>
+          <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+        </Declarations>
+      </ActivityModel>
+      <ActivityModel ClassName="Reject" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Reject workflow activity." ProductName="Ass5.Workflows" ActivityType="CodeActivity" ServiceContractName="ITaskWorkflowService" ServiceNamespace="http://tempuri.org/" WrapperOnly="false" WrapperType="ReceiveAndSendReply" WrapperActivityName="RejectReceiveSend" CanCreateInstance="false" PersistBeforeSend="true" EmitTrackingRecord="None">
+        <NamespacesToImport>
+          <string>System.Collections.Generic</string>
+          <string>Ass5.Entities</string>
+          <string>Ass5.Business</string>
+        </NamespacesToImport>
+        <Methods>
+          <MethodModel Name="Reject" ComponentName="TaskComponent" ReturnSignature="void" Namespaces="Ass5.Entities System Ass5.Business">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+            </Parameters>
+          </MethodModel>
+        </Methods>
+        <Declarations>
+          <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+        </Declarations>
+      </ActivityModel>
+      <ActivityModel ClassName="Update" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Update workflow activity." ProductName="Ass5.Workflows" ActivityType="CodeActivity" ServiceContractName="ITaskWorkflowService" ServiceNamespace="http://tempuri.org/" WrapperOnly="false" WrapperType="ReceiveAndSendReply" WrapperActivityName="UpdateReceiveSend" CanCreateInstance="false" PersistBeforeSend="true" EmitTrackingRecord="None">
+        <NamespacesToImport>
+          <string>System.Collections.Generic</string>
+          <string>Ass5.Entities</string>
+          <string>Ass5.Business</string>
+        </NamespacesToImport>
+        <Methods>
+          <MethodModel Name="Update" ComponentName="TaskComponent" ReturnSignature="void" Namespaces="Ass5.Entities System Ass5.Business">
+            <Parameters>
+              <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+              <ParameterModel Type="TaskLog" Name="taskLog" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+            </Parameters>
+          </MethodModel>
+        </Methods>
+        <Declarations>
+          <ParameterModel Type="Task" Name="task" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+          <ParameterModel Type="TaskLog" Name="taskLog" IncludeInDesigner="true" IsInternallyDeclared="false" IsReturnParameter="false" ArgumentType="In" />
+        </Declarations>
+      </ActivityModel>
+    </Activities>
+    <EndPoints>
+      <EndpointModel Name="basicHttpTaskWorkflowService" Address="http://localhost:9090/TaskWorkflowService" Binding="basicHttpBinding" IsUpdated="true" IsHttps="false" />
+    </EndPoints>
+  </WorkflowModel>
+</ArrayOfWorkflowModel>

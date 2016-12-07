@@ -1,0 +1,6 @@
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Presentation\Ass5.UI.Process\obj\Release\Ass5.UI.Process.csprojResolveAssemblyReference.cache
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.UI.Process.dll.config
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.UI.Process.dll
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.UI.Process.pdb
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Presentation\Ass5.UI.Process\obj\Release\Ass5.UI.Process.dll
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Presentation\Ass5.UI.Process\obj\Release\Ass5.UI.Process.pdb

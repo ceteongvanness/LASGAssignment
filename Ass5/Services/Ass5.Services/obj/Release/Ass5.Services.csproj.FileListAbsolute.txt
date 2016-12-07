@@ -1,0 +1,6 @@
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Services.dll.config
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Services.dll
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Services.pdb
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Services\Ass5.Services\obj\Release\Ass5.Services.csprojResolveAssemblyReference.cache
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Services\Ass5.Services\obj\Release\Ass5.Services.dll
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Services\Ass5.Services\obj\Release\Ass5.Services.pdb

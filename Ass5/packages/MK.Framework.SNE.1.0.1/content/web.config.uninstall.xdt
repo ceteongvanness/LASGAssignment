@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <configSections>
+    <sectionGroup name="macrokiosk">
+      <section name="sequenceNumber" xdt:Locator="Match(name)" xdt:Transform="Remove" />
+    </sectionGroup>
+	<sectionGroup name="macrokiosk" xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+	
+  </configSections>
+  <configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+  
+  <macrokiosk>
+    <sequenceNumber xdt:Transform="Remove">
+      <sequences>
+        <sequence name="default" min="1" max="99999999" sequencer="Bson" />
+      </sequences>
+    </sequenceNumber>
+  </macrokiosk>
+  <macrokiosk xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+	
+</configuration>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3D072D4-CAEC-4691-8975-FAC87AE1789B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ass5.Business</RootNamespace>
+    <AssemblyName>Ass5.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MK.Framework.ACE, Version=4.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.ACE.4.1.2\lib\MK.Framework.ACE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MK.Framework.ACE.Entities, Version=4.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.ACE.4.1.2\lib\MK.Framework.ACE.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MK.Framework.AE, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.AE.2.0.0\lib\MK.Framework.AE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MK.Framework.DXE, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.DXE.2.2.2\lib\MK.Framework.DXE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MK.Framework.DXE.Entities, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.DXE.2.2.2\lib\MK.Framework.DXE.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MK.Framework.RCE, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.RCE.1.1.2\lib\MK.Framework.RCE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MK.Framework.SNE, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.SNE.1.0.1\lib\MK.Framework.SNE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MK.Framework.SNE.Entities, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.SNE.1.0.1\lib\MK.Framework.SNE.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Ass5.Data.Agents\Ass5.Data.Agents.csproj">
+      <Project>{2AE90A15-FB85-4B91-BCA4-8841431380F0}</Project>
+      <Name>Ass5.Data.Agents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Ass5.Data\Ass5.Data.csproj">
+      <Project>{FA49C75B-156D-4E57-B8BE-4985B3C52E6E}</Project>
+      <Name>Ass5.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Ass5.Entities\Ass5.Entities.csproj">
+      <Project>{C870F66E-BDD8-46FE-AD31-51C8747F0587}</Project>
+      <Name>Ass5.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Ass5.Framework\Ass5.Framework.csproj">
+      <Project>{EAED6F07-32CD-4CA0-A5AA-666368AF5116}</Project>
+      <Name>Ass5.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ACE 4.1.sql" />
+    <Content Include="Scripts\AE 2.0.sql" />
+    <Content Include="Scripts\RCE 1.0.sql" />
+    <Content Include="Scripts\SNE 1.0.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

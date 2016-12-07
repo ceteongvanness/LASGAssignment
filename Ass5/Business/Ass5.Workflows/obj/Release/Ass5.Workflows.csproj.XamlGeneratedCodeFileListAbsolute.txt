@@ -1,0 +1,4 @@
+obj\Release\_Ass5.Workflows.g.cs
+obj\Release\TaskWorkflowService.g.cs
+obj\Release\Ass5.Workflows_TaskWorkflowService_BeforeInitializeComponentHelper.cs
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Release\Ass5.Workflows_TaskWorkflowService_CompiledExpressionRoot.cs

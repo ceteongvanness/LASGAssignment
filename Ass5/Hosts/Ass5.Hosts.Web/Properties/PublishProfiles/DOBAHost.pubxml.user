@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\www\DOBAHostAssignment</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Ass5.Business.dll">
+      <publishTime>12/07/2016 12:19:48</publishTime>
+    </File>
+    <File Include="bin/Ass5.Data.Agents.dll">
+      <publishTime>12/07/2016 12:19:48</publishTime>
+    </File>
+    <File Include="bin/Ass5.Data.dll">
+      <publishTime>12/07/2016 12:19:48</publishTime>
+    </File>
+    <File Include="bin/Ass5.Entities.dll">
+      <publishTime>12/07/2016 12:19:47</publishTime>
+    </File>
+    <File Include="bin/Ass5.Framework.dll">
+      <publishTime>12/07/2016 12:19:47</publishTime>
+    </File>
+    <File Include="bin/Ass5.Hosts.Web.dll">
+      <publishTime>12/07/2016 14:06:54</publishTime>
+    </File>
+    <File Include="bin/Ass5.Services.Contracts.dll">
+      <publishTime>12/07/2016 12:19:48</publishTime>
+    </File>
+    <File Include="bin/Ass5.Services.dll">
+      <publishTime>12/07/2016 12:19:49</publishTime>
+    </File>
+    <File Include="bin/Ass5.Workflows.Activities.dll">
+      <publishTime>12/07/2016 12:19:49</publishTime>
+    </File>
+    <File Include="bin/Ass5.Workflows.dll">
+      <publishTime>12/07/2016 12:19:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>11/30/2016 10:50:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>11/30/2016 10:50:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.DTSPipelineWrap.dll">
+      <publishTime>04/03/2010 11:53:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.DTSRuntimeWrap.dll">
+      <publishTime>04/03/2010 11:53:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.FileSystemTask.dll">
+      <publishTime>04/03/2010 11:53:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.ManagedDTS.dll">
+      <publishTime>04/03/2010 11:53:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.PipelineHost.dll">
+      <publishTime>04/03/2010 11:53:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.SqlServer.SendMailTask.dll">
+      <publishTime>04/03/2010 11:53:02</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.ACE.dll">
+      <publishTime>04/29/2016 17:03:30</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.ACE.Entities.dll">
+      <publishTime>04/29/2016 17:03:30</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.AE.dll">
+      <publishTime>11/13/2014 09:10:54</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.DXE.dll">
+      <publishTime>03/25/2015 17:46:40</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.DXE.Entities.dll">
+      <publishTime>03/25/2015 17:46:40</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.SNE.dll">
+      <publishTime>11/24/2015 09:43:58</publishTime>
+    </File>
+    <File Include="bin/MK.Framework.SNE.Entities.dll">
+      <publishTime>11/24/2015 09:43:58</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/07/2014 10:39:38</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Ass5.Entities.Task.datasource">
+      <publishTime>11/30/2016 13:58:21</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/07/2016 14:06:54</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

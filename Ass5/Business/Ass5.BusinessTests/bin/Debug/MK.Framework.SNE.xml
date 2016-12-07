@@ -1,0 +1,811 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MK.Framework.SNE</name>
+    </assembly>
+    <members>
+        <member name="T:MK.Framework.SNE.Configuration.SequenceElement">
+            <summary>
+            The sequence number configuration.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Configuration.SequenceElement.PostDeserialize">
+            <summary>
+            To validate values configured in configuration file.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.Name">
+            <summary>
+            The name of the sequencer.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.SharedFilePath">
+            <summary>
+            The sequencer file path for shared mode.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.Sequencer">
+            <summary>
+            The sequencer type.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.Prefix">
+            <summary>
+            The prefix value of the sequencer.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.Step">
+            <summary>
+            The step value for each new sequence number.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.Skip">
+            <summary>
+            To skip from the current sequence number.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.Min">
+            <summary>
+            The minimum value for the sequence number.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.Max">
+            <summary>
+            The maximum value for the sequence number.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.Start">
+            <summary>
+            The starting sequence number when the sequencer file is being generated.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.ApplicationKey">
+            <summary>
+            Unique Key for the Application used when Database Sequencer is used.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElement.ConnectionName">
+            <summary>
+            The connection name to retrieve connection string for database sequencer.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Configuration.SequenceElementCollection">
+            <summary>
+            Represents a configuration element containing a collection of SequenceElement.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Configuration.SequenceElementCollection.CreateNewElement">
+            <summary>
+            Creates a new System.Configuration.ConfigurationElement.
+            </summary>
+            <returns>A new SequenceElement.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Configuration.SequenceElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Gets the element key for SequenceElement.
+            </summary>
+            <param name="element">The SequenceElement to return the key for.</param>
+            <returns>An System.Object that acts as the key for the SequenceElement.</returns>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElementCollection.Item(System.Int32)">
+            <summary>
+            Get the SequenceElement based on index key in the collection.
+            </summary>
+            <param name="index">Index of the SequenceElement in the collection.</param>
+            <returns>A SequenceElement object.</returns>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceElementCollection.Item(System.String)">
+            <summary>
+            Get the SequenceElement based on name in the collection.
+            </summary>
+            <param name="name">Name of the SequenceElement.</param>
+            <returns>A SequenceElement object.</returns>
+        </member>
+        <member name="T:MK.Framework.SNE.Configuration.SequenceNumberSection">
+            <summary>
+            The sequence number configuration section.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Configuration.SequenceNumberSection.SEQUENCENUMBER_SECTION">
+            <summary>
+            Represents the section in the configuration file.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Configuration.SequenceNumberSection.GetSection">
+            <summary>
+            To get the sequence number section in configuration file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Configuration.SequenceNumberSection.PostDeserialize">
+            <summary>
+            Called after deserialization.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceNumberSection.RootPath">
+            <summary>
+            The location to keep the sequencer file.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceNumberSection.WebFolder">
+            <summary>
+            Folder name that stores the sequencer file. Default value is sne.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceNumberSection.DefaultSequencer">
+            <summary>
+            The name of sequencer that will be used when creating Sequencer using the default constructor.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Configuration.SequenceNumberSection.Sequences">
+            <summary>
+            A collection of sequencers defined in the configuration file.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Configuration.SequencerTypes">
+            <summary>
+            Types of Sequencer
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Configuration.SequencerTypes.MemoryMappedFile">
+            <summary>
+            Memory Mapped File
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Configuration.SequencerTypes.Database">
+            <summary>
+            Database
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Configuration.SequencerTypes.File">
+            <summary>
+            File
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Configuration.SequencerTypes.Bson">
+            <summary>
+            Bson
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Data.BsonRepository">
+            <summary>
+            A Bson Repository class that implements the file based repository for Sequencer.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Data.FileRespository">
+            <summary>
+            A file based repository for Sequencer.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Data.BaseRepository">
+            <summary>
+            A base repository class for Sequencer's storage.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Interfaces.IRepository">
+            <summary>
+            Interface class for implementing methods to manage Storage for Sequencer.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Interfaces.IRepository.Create">
+            <summary>
+            Creates a storage instance.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Interfaces.IRepository.Read">
+            <summary>
+            Reads the Sequence from the storage.
+            </summary>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Interfaces.IRepository.Write(MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Writes a Sequence to the storage.
+            </summary>
+            <param name="structure">A Sequence object.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Interfaces.IRepository.Destroy">
+            <summary>
+            Destroy a storage instance.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BaseRepository.Read">
+            <summary>
+            Gets the Sequence object.
+            </summary>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BaseRepository.Write(MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Updates the Sequence object.
+            </summary>
+            <param name="structure">A Sequence object.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BaseRepository.Create">
+            <summary>
+            Instantiate the Sequencer storage.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BaseRepository.Destroy">
+            <summary>
+            Destroys the Sequencer storage.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BaseRepository.ConvertToStruct``1(System.Byte[])">
+            <summary>
+            Converts an array of bytes to a structure.
+            </summary>
+            <typeparam name="T">The struct type.</typeparam>
+            <param name="data">The byte array.</param>
+            <returns>An instance of the struct.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BaseRepository.ConvertToBytes``1(``0)">
+            <summary>
+            Converts a structure to a byte array.
+            </summary>
+            <typeparam name="T">The struct type.</typeparam>
+            <param name="structure">The structure instance.</param>
+            <returns>A byte array.</returns>
+        </member>
+        <member name="F:MK.Framework.SNE.Data.FileRespository._mutex">
+            <summary>
+            Used to store the mutex object.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Data.FileRespository._path">
+            <summary>
+            Used to store the file path.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.FileRespository.#cctor">
+            <summary>
+            Initialize the FileRepository.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.FileRespository.Create">
+            <summary>
+            Instantiate the mutex.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.FileRespository.GetMutex">
+            <summary>
+            Creates a Mutex for use in file access protection.
+            </summary>
+            <returns>A Mutex instance.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.FileRespository.GetMutexName">
+            <summary>
+            This method returns the name of the Mutex. 
+            The purpose of this method is to solve the performance degradation caused by sharing the same Mutex name even though the application is using different sequencer file.
+            </summary>
+            <returns>Mutex name</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.FileRespository.Destroy">
+            <summary>
+            Destroys the mutex.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Data.FileRespository.MapFileName">
+            <summary>
+            Gets or sets the name of the file.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Data.FileRespository.MapName">
+            <summary>
+            Gets or sets the name of the sequencer.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Data.FileRespository.Element">
+            <summary>
+            Gets or sets the SequenceElement object.
+            </summary>
+        </member>
+        <member name="P:MK.Framework.SNE.Data.FileRespository.Section">
+            <summary>
+            Gets or sets the SequenceNumberSection object.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BsonRepository.#ctor">
+            <summary>
+            Initialize the BsonRepository.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BsonRepository.Read">
+            <summary>
+            Gets the Sequence object. 
+            </summary>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BsonRepository.Write(MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Writes the Sequence object information to the file.
+            </summary>
+            <param name="sequence">A Sequence object.</param>
+        </member>
+        <member name="T:MK.Framework.SNE.Data.BinaryFileRepository">
+            <summary>
+            A Binary File Repository class that implements the file based repository for Sequencer.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BinaryFileRepository.#ctor">
+            <summary>
+            Initialize the BinaryFileRepository.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BinaryFileRepository.Read">
+            <summary>
+            Gets the Sequence object. 
+            </summary>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.BinaryFileRepository.Write(MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Writes the Sequence object information to the file.
+            </summary>
+            <param name="sequence">A Sequence object.</param>
+        </member>
+        <member name="T:MK.Framework.SNE.Data.MemoryMappedFileRepository">
+            <summary>
+            A Memory Mapped File Repository class that implements the file based repository for Sequencer.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Data.MemoryMappedFileRepository._mmf">
+            <summary>
+            Store a memory mapped file object.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Data.MemoryMappedFileRepository._accessor">
+            <summary>
+            Store randomly accessible block of memory.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.MemoryMappedFileRepository.Create">
+            <summary>
+            Initialize the memory mapped file storage instance.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.MemoryMappedFileRepository.CreateMemoryMappedFile">
+            <summary>
+            Creates the memory mapped file.
+            </summary>
+            <returns>A MemoryMappedFile object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.MemoryMappedFileRepository.Read">
+            <summary>
+            Gets the Sequence object. 
+            </summary>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.MemoryMappedFileRepository.Write(MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Writes the Sequence object information to the memory mapped file.
+            </summary>
+            <param name="sequence">A Sequence object.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.MemoryMappedFileRepository.Destroy">
+            <summary>
+            Destroy the memory mapped file storage instance.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Data.DatabaseRepository">
+            <summary>
+            A database repository class for Sequencer
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Data.DatabaseRepository._appKey">
+            <summary>
+            Unique Key for the Application used when Database Sequencer is used.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Data.DatabaseRepository._connectionName">
+            <summary>
+            Connection string's name.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Data.DatabaseRepository._db">
+            <summary>
+            Represents a SQL Server database.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.DatabaseRepository.#ctor(System.String,System.String)">
+            <summary>
+            Initializes the DatabaseRepository with specified application key and connection name.
+            </summary>
+            <param name="appKey">Name of the application.</param>
+            <param name="connectionName">Connection name of the connection string for the database.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.DatabaseRepository.Create(System.String,MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Inserts a new sequencer record into the database with specified machine name and Sequence object.
+            </summary>
+            <param name="machineName">The machine name that runs the sequencer.</param>
+            <param name="sequence">A Sequence object that contains the Sequence information.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.DatabaseRepository.Write(MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Updates the sequencer record with the specified Sequence object.
+            </summary>
+            <param name="sequence">A sequence object that contains the Sequence information.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.DatabaseRepository.Read">
+            <summary>
+            Gets the Sequence object.
+            </summary>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.DatabaseRepository.Select">
+            <summary>
+            Gets the DbSequence object that contains the Sequence information from the database.
+            </summary>
+            <returns>A DbSequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.DatabaseRepository.GetConnectionString">
+            <summary>
+            Gets the connection string from configuration file.
+            </summary>
+            <returns>A connection string value from configuration file.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Data.DatabaseRepository.GetDataValue``1(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets database column value based on specified data type, IDataReader object and column name.
+            </summary>
+            <typeparam name="T">The type of data.</typeparam>
+            <param name="dr">A IDataReader object.</param>
+            <param name="columnName">A column name value.</param>
+            <returns>Value for the specified data type and column name.</returns>
+        </member>
+        <member name="T:MK.Framework.SNE.Exceptions.SequenceNumberException">
+            <summary>
+            The exception that is thrown when there is error with the sequencer number settings.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Exceptions.SequenceNumberException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the SequenceNumberException class with
+             a specified error message.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+        </member>
+        <member name="T:MK.Framework.SNE.Exceptions.SequencerNotFound">
+            <summary>
+            The exception that is thrown when there is an attempt to access a Sequencer that is not well-configured in configuration file.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Exceptions.SequencerNotFound.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the SequencerNotFound class with
+             a specified error message.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+        </member>
+        <member name="T:MK.Framework.SNE.DatabaseSequencer">
+            <summary>
+            A Database Sequencer
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Sequencer">
+            <summary>
+            A class that implements a storage for Sequencer.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Interfaces.ISequencer">
+            <summary>
+            Interface class for implementing a Storage for Sequencer
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Interfaces.ISequencer.Next(System.Boolean)">
+            <summary>
+            Gets the next available sequence number and then increases the sequence.
+            </summary>
+            <param name="withPrefix">To retrieve the next sequence number with prefix.</param>
+            <returns>Sequence number.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Interfaces.ISequencer.Peek(System.Boolean)">
+            <summary>
+            Returns the next available sequence number but does not increase the sequence.
+            </summary>
+            <param name="withPrefix">To retrieve the next sequence number with prefix.</param>
+            <returns>Sequence number.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Interfaces.ISequencer.Reset">
+            <summary>
+            Resets the sequence back to its Minimum boundary value.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Interfaces.ISequencer.Set(System.Int64,System.Boolean)">
+            <summary>
+            Resets the sequence to a specific value within the Minimum and Maximum boundaries.
+            </summary>
+            <param name="start">The starting number.</param>
+            <param name="withPrefix">To set the next sequence number with prefix.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Interfaces.ISequencer.GetSequenceInfo">
+            <summary>
+            Get Sequence information.
+            </summary>
+            <returns>A sequencer object.</returns>
+        </member>
+        <member name="F:MK.Framework.SNE.Sequencer._locker">
+            <summary>
+            Used as mutual-exclusion lock object.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Sequencer._isShared">
+            <summary>
+            To indicate whether the Sequencer is in shared mode.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Sequencer._skip">
+            <summary>
+            To indicate whether to skip a sequence number or not.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Sequencer._element">
+            <summary>
+            A SequenceElement object.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Sequencer._repository">
+            <summary>
+            An IRepository object.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Sequencer._loaded">
+            <summary>
+            List to store Sequencer that has been loaded.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.#cctor">
+            <summary>
+            Initialize Sequencer.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.Create">
+            <summary>
+            Create a sequencer with the default sequencer name as specified in the configuration file.
+            </summary>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.Create(System.String)">
+            <summary>
+            Create a sequencer with a name specified.
+            </summary>
+            <param name="name">Sequencer name.</param>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.CreateSequence(System.String)">
+            <summary>
+            Create a new sequencer with a predefined owner
+            </summary>
+            <param name="owner">The owner of the sequencer.</param>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.CalculatePadding">
+            <summary>
+            Calculates the padding from the given prefix and the number of digits from Minimum or Maximum.
+            </summary>
+            <returns>The padding value.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.Validate(MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Validates the sequence.
+            </summary>
+            <param name="sequence">A Sequence object.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.DetectChanges(MK.Framework.SNE.Entities.Sequence@)">
+            <summary>
+            Perform check on the changes made to the sequencer's configuration.
+            </summary>
+            <param name="sequence">A sequence object.</param>
+            <returns>true if has changes, otherwise false.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.GetSequenceNumber(MK.Framework.SNE.Entities.Sequence,System.Boolean,System.Int64@)">
+            <summary>
+            Performs boundary checks and get the next available sequence number.
+            </summary>
+            <param name="sequence">A sequence object.</param>
+            <param name="withPrefix">To add the sequence number with padding.</param>
+            <param name="number">A number value.</param>
+            <returns>A Sequence object with updated Current value.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.ValidateBoundary(MK.Framework.SNE.Entities.Sequence,System.Int64)">
+            <summary>
+            Perform check to ensure the current value set is within the boundary.
+            </summary>
+            <param name="sequence">A sequence object.</param>
+            <param name="start">A start value.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.Next(System.Boolean)">
+            <summary>
+            Gets the next available sequence number and then increases the sequence.
+            </summary>
+            <param name="withPrefix">To retrieve the next sequence number with prefix.</param>
+            <returns>Updated current sequence number.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.Set(System.Int64,System.Boolean)">
+            <summary>
+            Resets the sequence to a specific value within the Minimum and Maximum boundaries.
+            </summary>
+            <param name="start">The starting number.</param>
+            <param name="withPrefix">To set the next sequence number with prefix.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.Peek(System.Boolean)">
+            <summary>
+            Returns the next available sequence number but does not increase the sequence.
+            </summary>
+            <param name="withPrefix">To retrieve the next sequence number with prefix.</param>
+            <returns>Sequence number.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.Reset">
+            <summary>
+            Resets the sequence back to its Minimum boundary value.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Sequencer.GetSequenceInfo">
+            <summary>
+            Get sequencer's information.
+            </summary>
+            <returns>A Sequence object.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.DatabaseSequencer.#cctor">
+            <summary>
+            Initialize DatabaseSequencer
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.DatabaseSequencer.#ctor(MK.Framework.SNE.Configuration.SequenceElement,System.Boolean)">
+            <summary>
+            Creates a new instance of the DatabaseSequencer with the specified SequenceElement object and whether to skip a sequence number or not.
+            </summary>
+            <param name="element">A SequenceElement object.</param>
+            <param name="skip">true to skip a sequence number, otherwise false.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.DatabaseSequencer.Initialize">
+            <summary>
+            Initializes a new database sequencer. 
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.DatabaseSequencer.ReInitialize(MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Re-initializes the database sequencer with new settings from config file. This method should only be used when
+            running in exclusive mode.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.DatabaseSequencer.Next(System.Boolean)">
+            <summary>
+            Gets the next available sequence number and then increases the sequence.
+            </summary>
+            <param name="withPrefix">Optional parameter, true to get the sequence number with prefix, otherwise false.</param>
+            <returns>Sequence number.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.DatabaseSequencer.Set(System.Int64,System.Boolean)">
+            <summary>
+            Resets the sequence to a specific value within the Minimum and Maximum boundaries.
+            </summary>
+            <param name="start">The starting number.</param>
+            <param name="withPrefix">Optional parameter, true to reset the sequence with prefix, otherwise false.</param>
+        </member>
+        <member name="T:MK.Framework.SNE.FileBaseSequencer`1">
+            <summary>
+            A File based Sequencer
+            </summary>
+            <typeparam name="T">A FileRepository object.</typeparam>
+        </member>
+        <member name="F:MK.Framework.SNE.FileBaseSequencer`1._applicationId">
+            <summary>
+            Used to store the application ID
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.FileBaseSequencer`1.#cctor">
+            <summary>
+            Initialize FileBaseSequencer.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.FileBaseSequencer`1.#ctor(MK.Framework.SNE.Configuration.SequenceNumberSection,MK.Framework.SNE.Configuration.SequenceElement,System.String,System.Boolean)">
+            <summary>
+            Creates a file based sequencer with specified SequenceNumberSection, SequenceElement, file extension and whether to skip a sequence number or not.
+            </summary>
+            <param name="section">A SequenceNumberSection object.</param>
+            <param name="element">A SequenceElement object.</param>
+            <param name="extension">A file extension value.</param>
+            <param name="skip">true to skip a sequence number, otherwise false.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.FileBaseSequencer`1.VerifyDirectory(System.String)">
+            <summary>
+            Verifies the existence of the specified directory.
+            </summary>
+            <param name="path">Path of the specified directory.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.FileBaseSequencer`1.Validate(MK.Framework.SNE.Entities.Sequence)">
+            <summary>
+            Validates the sequence.
+            </summary>
+            <param name="sequence">A Sequence object.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.FileBaseSequencer`1.Initialize">
+            <summary>
+            Initializes a new file. 
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.FileBaseSequencer`1.ReInitialize">
+            <summary>
+            Re-initializes from an existing file.
+            </summary>
+        </member>
+        <member name="T:MK.Framework.SNE.Exceptions.SequenceConfigurationException">
+            <summary>
+            The exception that is thrown when there is an error with the Sequence Configuration.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Exceptions.SequenceConfigurationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the SequenceConfigurationException class with
+             a specified error message.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+        </member>
+        <member name="T:MK.Framework.SNE.Services.SequenceNumberService">
+            <summary>
+            A sequence number service class that provides access to the Sequencer's implementation methods.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Services.SequenceNumberService._locker">
+            <summary>
+            Used as mutual-exclusion lock object.
+            </summary>
+        </member>
+        <member name="F:MK.Framework.SNE.Services.SequenceNumberService._sequencers">
+            <summary>
+            Used to store the list of sequencers.
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Services.SequenceNumberService.#cctor">
+            <summary>
+            Initialize SequenceNumberService
+            </summary>
+        </member>
+        <member name="M:MK.Framework.SNE.Services.SequenceNumberService.GetSequencer(System.String)">
+            <summary>
+            Gets a Sequencer with a specified name.
+            </summary>
+            <param name="sequenceName">The name of the Sequencer.</param>
+            <returns>A Sequencer with the specified name.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Services.SequenceNumberService.Next(System.String,System.Boolean)">
+            <summary>
+            Gets the next available sequence number and then increases the sequence.
+            </summary>
+            <param name="sequenceName">Name of the sequencer.</param>
+            <param name="withPrefix">To retrieve the next sequence number with prefix.</param>
+            <returns>Updated current sequence number.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Services.SequenceNumberService.Set(System.String,System.Int64,System.Boolean)">
+            <summary>
+            Resets the sequence to a specific value within the Minimum and Maximum boundaries.
+            </summary>
+            <param name="sequenceName">Name of the sequencer.</param>
+            <param name="start">The starting number.</param>
+            <param name="withPrefix">To set the next sequence number with prefix.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Services.SequenceNumberService.Peek(System.String,System.Boolean)">
+            <summary>
+            Returns the next available sequence number but does not increase the sequence.
+            </summary>
+            <param name="sequenceName">Name of the sequencer.</param>
+            <param name="withPrefix">To retrieve the next sequence number with prefix.</param>
+            <returns>Updated current sequence number.</returns>
+        </member>
+        <member name="M:MK.Framework.SNE.Services.SequenceNumberService.Reset(System.String)">
+            <summary>
+            Resets the sequence back to its Minimum boundary value.
+            </summary>
+            <param name="sequenceName">Name of the sequencer.</param>
+        </member>
+        <member name="M:MK.Framework.SNE.Services.SequenceNumberService.GetSequenceInfo(System.String)">
+            <summary>
+            Get Sequence information.
+            </summary>
+            <param name="sequenceName">Name of the sequencer.</param>
+            <returns>A sequencer object.</returns>
+        </member>
+    </members>
+</doc>

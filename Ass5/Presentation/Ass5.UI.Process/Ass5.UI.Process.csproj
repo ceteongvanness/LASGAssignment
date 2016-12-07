@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04752989-8AB4-462B-B5EE-A75AB88856E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ass5.UI.Process</RootNamespace>
+    <AssemblyName>Ass5.UI.Process</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MK.Framework.ACE, Version=4.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.ACE.4.1.2\lib\MK.Framework.ACE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MK.Framework.ACE.Entities, Version=4.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.ACE.4.1.2\lib\MK.Framework.ACE.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MK.Framework.RCE, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MK.Framework.RCE.1.1.2\lib\MK.Framework.RCE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\TaskService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TaskWorkflowService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TaskController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Hosts\Ass5.Hosts.Web\Ass5.Hosts.Web.csproj">
+      <Project>{55177368-5A81-46D9-A824-6A71A1AA48B8}</Project>
+      <Name>Ass5.Hosts.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Ass5.Services.Contracts\Ass5.Services.Contracts.csproj">
+      <Project>{B9F80467-D0CB-4A74-8885-352A6FFBCC0D}</Project>
+      <Name>Ass5.Services.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Ass5.Entities\Ass5.Entities.csproj">
+      <Project>{C870F66E-BDD8-46FE-AD31-51C8747F0587}</Project>
+      <Name>Ass5.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Ass5.Entities.Task.datasource" />
+    <None Include="Properties\DataSources\MK.Framework.ACE.Entities.AccessPolicy.datasource" />
+    <None Include="Properties\DataSources\MK.Framework.ACE.Entities.User.datasource" />
+    <None Include="Service References\TaskService\TaskService.wsdl" />
+    <None Include="Service References\TaskService\TaskService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskService\TaskService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskService\TaskService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskService\TaskService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskWorkflowService\Ass5.UI.Process.TaskWorkflowService.ApproveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TaskWorkflowService\Ass5.UI.Process.TaskWorkflowService.CancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TaskWorkflowService\Ass5.UI.Process.TaskWorkflowService.RejectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TaskWorkflowService\Ass5.UI.Process.TaskWorkflowService.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TaskWorkflowService\TaskWorkflowService.wsdl" />
+    <None Include="Service References\TaskWorkflowService\TaskWorkflowService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskWorkflowService\TaskWorkflowService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TaskWorkflowService\TaskWorkflowService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ACE 4.1.sql" />
+    <Content Include="Scripts\RCE 1.0.sql" />
+    <None Include="Service References\TaskWorkflowService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TaskWorkflowService\configuration.svcinfo" />
+    <None Include="Service References\TaskWorkflowService\configuration91.svcinfo" />
+    <None Include="Service References\TaskWorkflowService\TaskWorkflowService.disco" />
+    <None Include="Service References\TaskService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TaskService\configuration.svcinfo" />
+    <None Include="Service References\TaskService\configuration91.svcinfo" />
+    <None Include="Service References\TaskService\TaskService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TaskService\" />
+    <WCFMetadataStorage Include="Service References\TaskWorkflowService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

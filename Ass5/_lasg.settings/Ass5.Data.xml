@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClassModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClassModel ClassName="TaskDAC" IsUpdated="false" GenerateXmlComments="true" UseDefaultComments="true" XmlComment="Task data access component. Manages CRUD operations for the Task table." ProductName="Ass5.Data" Body="&#xD;&#xA;		/// &lt;summary&gt;&#xD;&#xA;		/// Conditionally retrieves one or more rows from the Task table.&#xD;&#xA;		/// &lt;/summary&gt;&#xD;&#xA;		/// &lt;returns&gt;A collection of Task objects.&lt;/returns&gt;		&#xD;&#xA;		public List&lt;Task&gt; Select()&#xD;&#xA;		{&#xD;&#xA;			// WARNING! The following SQL query does not contain a WHERE condition.&#xD;&#xA;			// You are advised to include a WHERE condition to prevent any performance&#xD;&#xA;			// issues when querying large resultsets.&#xD;&#xA;			const string SQL_STATEMENT = &#xD;&#xA;				&quot;SELECT [TaskID], [TaskName], [StartDate], [EndDate], [CorrelationID], [DateSubmitted], [TaskStatus]&quot;+&#xD;&#xA;						&quot;, [TaskNo] &quot; +&#xD;&#xA;				&quot;FROM dbo.Task &quot;;&#xD;&#xA;&#xD;&#xA;			List&lt;Task&gt; result = new List&lt;Task&gt;();&#xD;&#xA;&#xD;&#xA;			// Connect to database.&#xD;&#xA;			var db = new SqlDatabase(base.ConnectionString);&#xD;&#xA;			using (DbCommand cmd = db.GetSqlStringCommand(SQL_STATEMENT))&#xD;&#xA;			{ &#xD;&#xA;				using (IDataReader dr = db.ExecuteReader(cmd))&#xD;&#xA;				{&#xD;&#xA;					while (dr.Read())&#xD;&#xA;					{&#xD;&#xA;						// Create a new Task&#xD;&#xA;						Task task = new Task();&#xD;&#xA;&#xD;&#xA;						// Read values.&#xD;&#xA;						task.TaskID = GetDataValue&lt;int&gt;(dr, &quot;TaskID&quot;);&#xD;&#xA;						task.TaskName = GetDataValue&lt;string&gt;(dr, &quot;TaskName&quot;);&#xD;&#xA;						task.StartDate = GetDataValue&lt;DateTime&gt;(dr, &quot;StartDate&quot;);&#xD;&#xA;						task.EndDate = GetDataValue&lt;DateTime&gt;(dr, &quot;EndDate&quot;);&#xD;&#xA;						task.CorrelationID = GetDataValue&lt;Guid&gt;(dr, &quot;CorrelationID&quot;);&#xD;&#xA;						task.DateSubmitted = GetDataValue&lt;DateTime&gt;(dr, &quot;DateSubmitted&quot;);&#xD;&#xA;						task.TaskStatus = GetDataValue&lt;string&gt;(dr, &quot;TaskStatus&quot;);&#xD;&#xA;						task.TaskNo = GetDataValue&lt;string&gt;(dr, &quot;TaskNo&quot;);&#xD;&#xA;&#xD;&#xA;						// Add to List.&#xD;&#xA;						result.Add(task);&#xD;&#xA;					}&#xD;&#xA;				}&#xD;&#xA;			}&#xD;&#xA;&#xD;&#xA;			return result;&#xD;&#xA;		}&#xD;&#xA;">
+    <NamespacesToImport />
+    <Methods>
+      <MethodModel Name="Select" EntityName="Task" TableName="Task" SchemaName="dbo" TableAlias="A" Type="Select" IsUpdated="false" XmlComment="Conditionally retrieves one or more rows from the Task table." GenerateXmlComments="true" UseDefaultComments="true" UseLoadMethod="false" GenerateLoadMethod="false">
+        <RelatedTables />
+        <Columns>
+          <ColumnModel Name="TaskID" TableName="Task" PropertyName="TaskID" DataType="int" DbType="Int32" IsPrimaryKey="true" IsIdentity="true" IsNullable="false" IsOutput="false" />
+          <ColumnModel Name="TaskName" TableName="Task" PropertyName="TaskName" DataType="string" DbType="String" IsPrimaryKey="false" IsIdentity="false" IsNullable="false" IsOutput="false" />
+          <ColumnModel Name="StartDate" TableName="Task" PropertyName="StartDate" DataType="DateTime" DbType="Date" IsPrimaryKey="false" IsIdentity="false" IsNullable="false" IsOutput="false" />
+          <ColumnModel Name="EndDate" TableName="Task" PropertyName="EndDate" DataType="DateTime" DbType="Date" IsPrimaryKey="false" IsIdentity="false" IsNullable="false" IsOutput="false" />
+          <ColumnModel Name="CorrelationID" TableName="Task" PropertyName="CorrelationID" DataType="Guid" DbType="Guid" IsPrimaryKey="false" IsIdentity="false" IsNullable="false" IsOutput="false" />
+          <ColumnModel Name="DateSubmitted" TableName="Task" PropertyName="DateSubmitted" DataType="DateTime" DbType="Date" IsPrimaryKey="false" IsIdentity="false" IsNullable="false" IsOutput="false" />
+          <ColumnModel Name="TaskStatus" TableName="Task" PropertyName="TaskStatus" DataType="string" DbType="String" IsPrimaryKey="false" IsIdentity="false" IsNullable="false" IsOutput="false" />
+          <ColumnModel Name="TaskNo" TableName="Task" PropertyName="TaskNo" DataType="string" DbType="String" IsPrimaryKey="false" IsIdentity="false" IsNullable="false" IsOutput="false" />
+        </Columns>
+        <FilterColumns />
+        <OrderByColumns />
+      </MethodModel>
+    </Methods>
+  </ClassModel>
+</ArrayOfClassModel>

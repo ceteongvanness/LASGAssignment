@@ -1,0 +1,15 @@
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Workflows.dll
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\bin\Ass5.Workflows.pdb
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\Ass5.Workflows.csprojResolveAssemblyReference.cache
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\TaskWorkflowService.g.xaml
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\Ass5.Workflows_TaskWorkflowService_BeforeInitializeComponentHelper.txt
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\_Ass5.Workflows.g.cs
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\TaskWorkflowService.g.cs
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\Ass5.Workflows_TaskWorkflowService_BeforeInitializeComponentHelper.cs
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\Ass5.Workflows.csproj.XamlGeneratedCodeFileListAbsolute.txt
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\Ass5.Workflows.csproj.XamlGeneratedXamlFileListAbsolute.txt
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\Ass5.Workflows.dll
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\Ass5.Workflows.pdb
+c:\users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\AC2C1ABA-CCF6-44D4-8127-588FD4D0A860-DeferredValidationErrors.xml
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\Ass5.Workflows_TaskWorkflowService_CompiledExpressionRoot.cs
+C:\Users\et.cheah\documents\visual studio 2015\Projects\Ass5\Business\Ass5.Workflows\obj\Debug\Ass5.Workflows.csproj.FileListAbsolute.txt
